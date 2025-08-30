@@ -22,13 +22,19 @@ int main() {
     scanf("%d", &V[i]);
     if (V[i] > 100) {
       printf("INVALIDO\n");
+      V[i] = 500;
     }
   }
 
   // calcular, armazenar e exibir o valor do produto
   for (int i = 0; i < 101; i++) {
     res[i] = U[i] * V[i];
-    printf("U[%d] = %d\n", i, res[i]);
+    if (V[i] == 500 || U[i] == 500) {
+      printf("INVALIDO\n");
+    }
+    else {
+      printf("U[%d] = %d\n", i, res[i]);
+    }
   }
   return 0;
 }
