@@ -14,6 +14,7 @@ int main() {
     scanf("%d", &U[i]);
     if (U[i] > 100) {
       printf("INVALIDO\n");
+      U[i] = 500;
     }
   }
 
