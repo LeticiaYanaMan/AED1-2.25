@@ -1,0 +1,9 @@
+Algoritmo - procedimento computacional bem definido para resolver um problema
+
+Input (entrada) -> Algoritmo 1 -> output (saída)
+              \-> Algoritmo 2 ->/
+
+Algoritmos diferentes podem diferenciar em: tempo de respostas, memoria ocupada, o que o algoritmo trabalha (numero de linhas, caminhos, etc)
+  --> isso de chama métricas - as formas diferentes de fazer um algoritmo
+    --> algumas podem ser mais gerais do que outras 
+matematicamente, somos capazes de ver a dificuldade de um algoritmo
