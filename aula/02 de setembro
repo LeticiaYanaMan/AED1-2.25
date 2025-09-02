@@ -1,6 +1,7 @@
 Algoritmo - procedimento computacional bem definido para resolver um problema
 
-Input (entrada) -> Algoritmo 1 -> output (saída)
+              /-> Algoritmo 1 ->\
+Input (entrada)                  output (saída)
               \-> Algoritmo 2 ->/
 
 Algoritmos diferentes podem diferenciar em: tempo de respostas, memoria ocupada, o que o algoritmo trabalha (numero de linhas, caminhos, etc)
@@ -8,4 +9,25 @@ Algoritmos diferentes podem diferenciar em: tempo de respostas, memoria ocupada,
     --> algumas podem ser mais gerais do que outras 
 matematicamente, somos capazes de ver a dificuldade de um algoritmo
    --> o que diz se um algoritmo é melhor ou pior é o curso computacional, visto matematicamente
+
+https://sorting-algorithm-jet.vercel.app/select%20algorithm
+   ---> esse site mostra a diferença de tempo entre cada tipo diferente de "sorting" - todos funcionam, mas uns são mais rapidos
+
+algoritmos que não tem soluções são chamados de NP-difíceis (não polinomiais, porque o polinomial são os solucionáveis)
+   --> normalmente problemas de otimização, que não possuem solução exata
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
