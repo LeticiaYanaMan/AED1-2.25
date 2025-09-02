@@ -4,7 +4,7 @@ Algoritmo - procedimento computacional bem definido para resolver um problema
 Input (entrada)                  output (saída)
               \-> Algoritmo 2 ->/
 
-Algoritmos diferentes podem diferenciar em: tempo de respostas, memoria ocupada, o que o algoritmo trabalha (numero de linhas, caminhos, etc)
+Algoritmos diferentes podem diferenciar em: tempo de respostas, memoria ocupada, como o algoritmo trabalha (numero de linhas, caminhos, etc)
   --> isso de chama métricas - as formas diferentes de fazer um algoritmo
     --> algumas podem ser mais gerais do que outras 
 matematicamente, somos capazes de ver a dificuldade de um algoritmo
@@ -16,7 +16,13 @@ https://sorting-algorithm-jet.vercel.app/select%20algorithm
 algoritmos que não tem soluções são chamados de NP-difíceis (não polinomiais, porque o polinomial são os solucionáveis)
    --> normalmente problemas de otimização, que não possuem solução exata
 
+**CLASSE O
 
+Definição formal:
+O(g(n)) = {f(n)} --> existem constantes positivas c e n0 tais que 0 <= f(n) <= cg(n), para todo n >= n0)
+Informalmente, dizemos que f(n) pertence a O(g(n)), então f(n) cresce no maximo tão rapido quato g(n)
+ -> conforme aumenta, a distancia continua sempre a mesma, apesar de parecer diminuir - crescem na mesma proporção 
+    (como dar um zoom com a camera - continua parado, mas parece estar diminuindo) 
 
 
 
