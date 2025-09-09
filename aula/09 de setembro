@@ -1,0 +1,20 @@
+CRIANDO STRUCTS E ACESSANDO
+
+--  CRIANDO
+struct estudante {
+  char nomes[100];
+  float nota;
+  int idade;
+}
+
+--  ACESSANDO NORMAL
+struct estudante batatinha; 
+batatinha.idade = 20;
+
+--  ACESSANDO VETOR
+struct estudante batatinhas[20];
+batatinhas[49].idade = 10;
+
+--  QUESTÃO DE PROVA - TA CERTO?
+for (int i = 0; i < 50; batatinhas[i].idade = 0; i++)
+     
