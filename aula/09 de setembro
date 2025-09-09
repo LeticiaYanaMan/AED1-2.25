@@ -63,6 +63,18 @@ printf("%d", niver.dia);
 scanf("%d", &niver.dia);
 data niver = { 9, 9, 25};
 
+---
 
+struct estudante {
+  char nome[100];
+  tipo1 membro1;
+}
+typedef estudante aluno
 
+aluno.fulano = {"Fulanito", 20, 9.8};
 
+--- o typedef serve para mais coisas, como
+
+typedef int inteiro;
+inteiro i = 0;
+inteiro i[20];
