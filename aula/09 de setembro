@@ -40,7 +40,28 @@ for (, i < 21, printf("%d", i), i++);
 
    for (, i < 21, printf("%d", i), ++i); --- imprime 21 --- primeiro faz a soma, depois usa o i
 
+--  APELIDOS
+struct nome {
+  tipo membro1;
+  tipo membro2;
+  ...
+}
+struct nome nomeVariavel;
 
+ou 
+
+struct ddmmaa {
+  int dia;
+  int mes;
+  int ano;
+}
+typedef struct ddmmaa data;
+
+data niver;
+niver.dia = 9;
+printf("%d", niver.dia);
+scanf("%d", &niver.dia);
+data niver = { 9, 9, 25};
 
 
 
