@@ -17,7 +17,7 @@ batatinhas[49].idade = 10;
 
 --  QUESTÃO DE PROVA - TA CERTO? 
 for (int i = 0, i < 50, batatinhas[i].idade = 0, i++) -- todos os batatinhas começam iguais a 0
-for (int i = 0, i < 50, batatinhas[i].idade = 0, ++i) --- todos os batatinhas começam iguais a 0, menos o que tem i = 0
+for (int i = 0, i < 50, batatinhas[i].idade = 0, ++i) --- todos os batatinhas começam iguais a 0, menos o que tem i = 0     
 
 o "for" tem tres campos - no primeiro campo, tem a inicializaçao - no segundo, tem a condiçao de parada -
 no terceiro, tem o passo que segue pra avançar com o for 
