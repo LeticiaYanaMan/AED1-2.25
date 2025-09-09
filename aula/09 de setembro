@@ -40,7 +40,8 @@ for (, i < 21, printf("%d", i), i++);
 
    for (, i < 21, printf("%d", i), ++i); --- imprime 21 --- primeiro faz a soma, depois usa o i
 
---  APELIDOS
+--  "APELIDOS" (typedef)
+
 struct nome {
   tipo membro1;
   tipo membro2;
@@ -78,3 +79,5 @@ aluno.fulano = {"Fulanito", 20, 9.8};
 typedef int inteiro;
 inteiro i = 0;
 inteiro i[20];
+
+
