@@ -80,4 +80,25 @@ typedef int inteiro;
 inteiro i = 0;
 inteiro i[20];
 
+1 ---  typedef struct { 
+2 ---    double real;
+3 ---    double imag;
+4 ---  } complexos;
+     isso está errado - ta sem nome 
+COMO SERIA O CERTO? 1 --- typedef struct taltal { --- ele precisa de um nome "oficial"
+colocar o typedef primeiro quer dizer que toda a estrutura, desde " struct taltal {" ate "}" recebe esse apelido
+
+--- VARIAVEL
+
+struct {
+  double a1;
+  double b1;
+} c1;
+--- voce chama tudo isso de c1 --- não tem nome, entao voce n consegue chamar essa estrutura depois 
+
+--- EXERCICIO - SOMA DE DOIS NUMEROS COMPLEXOS
+
+
+
+
 
