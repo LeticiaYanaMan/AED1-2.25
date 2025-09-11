@@ -92,6 +92,42 @@ Termine a implementação da struct complexo que armazena um numero complexo (pa
 
   --- PONTEIROS
 
+MEMORIA DINAMICA - voce pode mudar
+   voce ganhou uma brasilia e ão pode vender --- o que voce compra depois, n importa desde que ainda tenha a brasilia
+
+MEMORIA ESTATICA - é o que consegue carregar
+   é o que a brasilia consegue carregar, tipo 3 pessoas, 2 caixas...
+
+quando voce cria uma variavel e coloca asterisco *, ele guarda endereços 
+
+int x = -5;
+int *p = &x; --- criou um ponteiro --- quando usa, voce acessa o conteudo da memoria do ponteiro
+
+ENDEREÇAMENTO --- endereça para ontros pontos na memoria 
+
+o tipo do ponteiro (int, float, char, double) indica o tipo armazenado no endereço apontado 
+ponteiros tambem sao variaveis, que guardam endereços
+
+**********
+int v;
+v = 9;
+int *p;
+p - &v; // ta sem o asterisco mesmo --- fala do endereço
+printf(... *p) /// quero ver o conteudo que ele endereça --- ele vai acessar a memoria de p ate chegar num endereço, que aponta o endereço que indica
+
+*p = 7; // quando coloco o asterisco, estou falando do conteudo (que ele aponta) --- ele vai trocar o valor de onde estou apontando para 7
+   // não trocou o endereço, troca o valor do espa;o de memoria para o qual ele esta apontando 
+
+p = 0; // como nao tem asterisco, ele troca o valor da variavel p --- 0 significa nul 
+
+*************
+
+se fosse
+********
+int v = 65;
+char *p;
+// quando for imprimir, como pegou o numero 65 como char, ele vai interpretar como 'A'
+********
 
 
 
