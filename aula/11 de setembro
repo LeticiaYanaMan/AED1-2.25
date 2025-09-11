@@ -90,6 +90,7 @@ Faça uma struct circ que armazena as coordenadas do centro e o valor do raio de
 Termine a implementação da struct complexo que armazena um numero complexo (parte real e imaginaria)
 - Escreva as funções que fazem operações sobre numeros complexos (soma, multiplicaçao, valor absoluto, etc)
 
+  --- PONTEIROS
 
 
 
