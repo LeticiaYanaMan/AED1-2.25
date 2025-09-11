@@ -32,3 +32,47 @@ while (i < 10) {         while (i < 10) {
 for (, i < 11, printf("%d", vetor[i]);
 
 // estudar e ir testando as diferenças de for e while   
+
+
+--- TIPO ABSTRATO DE DADOS (TAD)
+
+modularizaçao de codigo - duas alternativas
+WET (Write everything twice) - metodo obsoleto - n é tão legal
+DRY (Cont repeat yourself) - abordagem estrutural
+
+Funçoes permitem a reutilizaçao do codigo em varios lugares
+Quando utilizamos uma funçao:
+- so importa que retorne o resultado
+- nao como o resultado e calculado
+
+vamos dividir o programa em tres modulos: 
+cliente --- interface --- implementaçao 
+
+****************
+cliente é a pessoa que chega num predio e quer ir no dentista - fala com a interface
+interface é o atendente, a fachada do predio - sabe que tem dentistas no predio e vai informar o cliente
+          tem informaçao e se comunica com o dentista, mas nao é dentista 
+          não sabe como funciona o processo de implementação  
+******************
+INTERFACE - conjunto de operaçoes/declaraçoes de um TAD
+IMPLEMENTAÇAO - conjunto de algoritmos que fazem as operaçoes 
+CLIENTE - chama a operaçao 
+
+em C:
+- um TAD é declarado como uma struct
+- a interface é um conjunto de prototipos de funcoes que manipula a struct
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
