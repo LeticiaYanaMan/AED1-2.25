@@ -62,7 +62,7 @@ em C:
 - um TAD é declarado como uma struct
 - a interface é um conjunto de prototipos de funcoes que manipula a struct
 
-
+arquivo .h --- header em ingles --- interface --- voce mostra o que consegue apresentar ao cliente
 
 
 
