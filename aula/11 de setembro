@@ -63,6 +63,17 @@ em C:
 - a interface é um conjunto de prototipos de funcoes que manipula a struct
 
 arquivo .h --- header em ingles --- interface --- voce mostra o que consegue apresentar ao cliente
+  é a interface
+arquivo .c precisa incluir biblioteca --- quando i=for incluir o que vc colocou como arquivo .h:
+     #include <arquivo.h> --- e voce acessa o codigo que voce criou 
+     no arquivo c, voce tem acesso ao codigo propriamente
+    é a implementaçao
+
+o cliente e quando voce usa o arquivo que alguem criou 
+      por exemplo, quando chamamos o <math.h> 
+--- pesquisar a diferença de chamar <stdio.h> de "stdio.h"
+
+
 
 
 
