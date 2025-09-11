@@ -73,10 +73,22 @@ o cliente e quando voce usa o arquivo que alguem criou
       por exemplo, quando chamamos o <math.h> 
 --- pesquisar a diferença de chamar <stdio.h> de "stdio.h"
 
+hoje em dia não utilizam "goto", mas eram bastante comum
+ --- se voce coloca goto -30 significa va para a linha 30
+ --- é ruim porque, se vc muda algo antes dessa linha, ela muda de numero e, assim, o seu codigo fica errado
 
+esses arquivos sao otimos porque podem ser utilizados em outros lugarese permite criar bibliotecasd e tipo uteis
+o codigo fica mais simples - o cliente so se preocupa em usar funçoes e o TAD só se preocupa em disponibilizar funções
+separa a implementaçao da interface - pode mudar a implementaçao sem quebrar clientes - permite fazer otimizaçoes ou adicionar novas funçoes 
+o codigo fica modular - mais facil colaborar com outros programadores - arquivos menores com responsabilidade bem defnida
 
+-------- EXERCICIO DE TAD
+Faça uma struct circ que armazena as coordenadas do centro e o valor do raio de um círculo
+- faça uma função que recebe um círculo e devolve o valor da sua área
+- faça uma função que recebe um círculo e um fator de escala da área e devolve um circulo com o mesmo centro e o novo raio deste
 
-
+Termine a implementação da struct complexo que armazena um numero complexo (parte real e imaginaria)
+- Escreva as funções que fazem operações sobre numeros complexos (soma, multiplicaçao, valor absoluto, etc)
 
 
 
