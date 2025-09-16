@@ -2,3 +2,12 @@ anotaçoes nos slides da aula 4 (arquivos) pelo tablet
 
 instalar notepad++ e overleaf
 
+------------------- ARQUIVO BINARIO
+int c = 5;
+int array[20];
+int *v = &c;
+
+// essas duas linhas são equivalentes 
+int *v = array;
+v = &array[0];
+// o endereço do vetor é sempre o primeiro da lista 
