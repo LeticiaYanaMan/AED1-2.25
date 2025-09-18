@@ -24,13 +24,24 @@ typedef struct {
 int main() {
   Produto p1[6];
   Produto *p; // ponteiro que aponta para struct
-
+  char Str[50];
+  double preco;
+  int qtd;
 
   for (int i = 0; i < 6; i++) {
     p = &p1[i]; // p aponta para o primeiro produto 
-    
+    scanf("%s", Str);
+    strcpy(p->nome, Str);
+    scanf("%lf", &preco);
+    p->preco = preco;
+    scanf("%d", &qtd);
+    p->quantidade = qtd;
+    for (int j = 0; j < 6; j++) {
+      Str[j] = \0;
+    }
+  }
 
-  
+
 
 
 
