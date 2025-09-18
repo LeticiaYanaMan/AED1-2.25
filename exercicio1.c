@@ -17,7 +17,7 @@
 
 typedef struct {
   char nome[50];
-  float preco;
+  double preco;
   int quantidade;
 } Produto;
 
@@ -27,6 +27,8 @@ int main() {
   char Str[50];
   double preco;
   int qtd;
+  double mult[6];
+  double aux;
 
   for (int i = 0; i < 6; i++) {
     p = &p1[i]; // p aponta para o primeiro produto 
@@ -37,12 +39,24 @@ int main() {
     scanf("%d", &qtd);
     p->quantidade = qtd;
     for (int j = 0; j < 6; j++) {
-      Str[j] = \0;
+      Str[j] = '\0';
     }
     printf("%s\n", p->nome);
     printf("%lf\n", p->preco);
     printf("%d\n", p->quantidade);
+    mult[i] = p->preco * p->quantidade;
+    
   }
+  for (int i = 1; i < 5; i++) {
+    if (mult[i] < mult[i -1]) {
+      aux = mult[i-1];
+      mult[i-1] = mult[i];
+      mult[i] = aux;
+    }
+  }
+  printf("produto de maior valor: %lf\n", mult[5]);
+  return 0;
+}
 
 
 
