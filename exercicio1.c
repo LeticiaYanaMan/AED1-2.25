@@ -39,10 +39,10 @@ int main() {
     for (int j = 0; j < 6; j++) {
       Str[j] = \0;
     }
+    printf("%s\n", p->nome);
+    printf("%lf\n", p->preco);
+    printf("%d\n", p->quantidade);
   }
-
-
-
 
 
 
