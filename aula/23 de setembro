@@ -31,6 +31,7 @@ quando der printf("%d", *p = *(p+3));, vai imprimir o valor do resultado do prim
 --------------------------------------------------------------
 NOVA BIBLIOTECA <stdlib.h>
 alocação dinamica
+
 malloc -- memory allocation -- aloca um bloco de (size) bytes
 char "character" = (char*) malloc1; -- estou alocando um character (um byte)
 int *arr = (int*) malloc(5 * sizeof(int)); -- estou alocando 5 blocos de int (se int equivale a 2 blocos, estou alocando 10)
@@ -68,11 +69,14 @@ for (int i = 0; i < n; ==i)
   scanf("%d", &v[i]);
 ...
 free(v); --- se tiver um ponteiro apontando para um vetor com uma memoria que foi liberada, vai dar ERRO - se voce declarou antes, não vai mudar o ponteiro, portanto quando vc tentar acessar, vai dar erro
+v = null; --- o ponteiro não armazena mais um endereço que pode ter sido liberado
 
+----------------------------------
 
+int *v = NULL; --- inicializou o ponteiro com 0;
+v = (int *) realloc(v, (n+1)*sizeof(int)); --- pode ser (n-1) --- voce pode aumentar ou diminuir o tamanho do array que quiser
 
-
-
+se o v já tem a memoria, ele vai tentar aumentar mais o endereço nesse mesmo lugar que está --- se não tiver, vai buscar no lugar onde quer 
 
 
 
