@@ -70,6 +70,7 @@ for (int i = 0; i < n; ==i)
 ...
 free(v); --- se tiver um ponteiro apontando para um vetor com uma memoria que foi liberada, vai dar ERRO - se voce declarou antes, não vai mudar o ponteiro, portanto quando vc tentar acessar, vai dar erro
 v = null; --- o ponteiro não armazena mais um endereço que pode ter sido liberado
+free() =/= realloc NULL;
 
 ----------------------------------
 
@@ -96,11 +97,16 @@ int t = (int)x; --- vai entregar x, que er achar, transformado em int (deixado e
 ele não vai pedir isso na prova, tipo ele n vai descontar nota se esquecer, mas pode ser que ele pergunte
 
 malloc - serve para qualquer ponteiro que você tiver
+para achar coluna e linha, usamos calloc
 
 int ** M - o endereço de memoria do endereço de memoria é N.;
 estudar mais essa parte de matrizes bidimensionais v
 
+------------------ 
+LIVROS
+* Feofiloff --- Capitulo Aoendice D
 
+TAREFA PRÁTICA
 
 
 
