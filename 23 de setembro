@@ -1,0 +1,24 @@
+void troca (int a, int b) {
+  int temp;
+  temp = a;
+  a= b;
+  b = temp;
+}
+
+se x = 10 e y = b, troca(x,y), vai sair 10 e 20
+
+void troca (int *a, int *b) {
+  int temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+com ponteiros, ele realmente troca o endereço e tem efeito fora da função 
+
+------------------------------------------------------
+
+podemos usar ponteiros para percorrer vetores
+memoria do vetor = memoria do primeiro elemento
+
+int *p vai receber a memoria 
