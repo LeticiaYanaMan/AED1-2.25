@@ -24,3 +24,21 @@ memoria do vetor = memoria do primeiro elemento
 int *p
 p = vet --- vai receber o endereço do primerio elemento (ou vet[0])
 *(p+4) --- vai para o quinto elemento do vetor (0 - 1 - 2- 3- 4)
+p++ corresponde a p = p + 1
+
+quando der printf("%d", *p = *(p+3));, vai imprimir o valor do resultado do primeiro elemento com o quarto elemento  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
