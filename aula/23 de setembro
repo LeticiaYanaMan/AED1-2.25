@@ -29,7 +29,7 @@ p++ corresponde a p = p + 1
 quando der printf("%d", *p = *(p+3));, vai imprimir o valor do resultado do primeiro elemento (que é indicado por p) com o quarto elemento (o indicapor por p é 0 e soma 3 - fica o quarto termo)  
 
 --------------------------------------------------------------
-
+NOVA BIBLIOTECA <stdlib.h>
 alocação dinamica
 malloc -- memory allocation -- aloca um bloco de (size) bytes
 char "character" = (char*) malloc1; -- estou alocando um character (um byte)
@@ -42,6 +42,46 @@ if (d == NULL) {
   printf("malloc devolveu NULL\n");
   exit (EXIT_FAILURE);
 } ----- precisa ver se conseguiu alocar memoria - a memoria é finita, então se não conseguir alocar, ele vai devolver NULL
+
+void troca() {
+  int * vetor = malloc(10000 * sizeof(int));
+  free(vetor); ---- como senão estivesse mais usando a memoria, então ela é liberada para ser usada --- sem essa função, você perde essa memoria --- recebe um ponteiro, não de uma variavel estatica 
+  return;
+}
+
+calloc -- memoria que inicia com bytes em 0 
+int *arr = (int*) calloc(5, sizeof(int));
+
+realloc -- realoca a memoria que voce pediu -- mudar o tamanho da memoria do array
+     aloquei um vetor com 6 espaços - a memoria depois do vetor continua, só n esta reservada para o vetor - no caso, esse espaço de memoria depois do vetor esta ocupada --- com o realloc, 
+          eu consigo deslocar o tamanho do array (vetor) - caso a memoria que ele usaria já esta sendo usada, ele muda de endereço e procura um lugar na memoria onde consegue abrigar um vetor do tamanho que 
+          preciso 
+arr = (int *) malloc(arr, 10 *sizeof(int));
+                  
+------------------------------------------------
+
+int *v;
+int n;
+scanf("%d", &n);
+v = malloc (n * sizeof(int));
+for (int i = 0; i < n; ==i)
+  scanf("%d", &v[i]);
+...
+free(v); --- se tiver um ponteiro apontando para um vetor com uma memoria que foi liberada, vai dar ERRO - se voce declarou antes, não vai mudar o ponteiro, portanto quando vc tentar acessar, vai dar erro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
