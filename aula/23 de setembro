@@ -21,4 +21,6 @@ com ponteiros, ele realmente troca o endereço e tem efeito fora da função
 podemos usar ponteiros para percorrer vetores
 memoria do vetor = memoria do primeiro elemento
 
-int *p vai receber a memoria 
+int *p
+p = vet --- vai receber o endereço do primerio elemento (ou vet[0])
+*(p+4) --- vai para o quinto elemento do vetor (0 - 1 - 2- 3- 4)
