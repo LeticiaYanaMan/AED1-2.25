@@ -28,7 +28,20 @@ p++ corresponde a p = p + 1
 
 quando der printf("%d", *p = *(p+3));, vai imprimir o valor do resultado do primeiro elemento (que é indicado por p) com o quarto elemento (o indicapor por p é 0 e soma 3 - fica o quarto termo)  
 
+--------------------------------------------------------------
 
+alocação dinamica
+malloc -- memory allocation -- aloca um bloco de (size) bytes
+char "character" = (char*) malloc1; -- estou alocando um character (um byte)
+int *arr = (int*) malloc(5 * sizeof(int)); -- estou alocando 5 blocos de int (se int equivale a 2 blocos, estou alocando 10)
+
+
+data *d;
+d = malloc (sizeof(data));
+if (d == NULL) {
+  printf("malloc devolveu NULL\n");
+  exit (EXIT_FAILURE);
+} ----- precisa ver se conseguiu alocar memoria - a memoria é finita, então se não conseguir alocar, ele vai devolver NULL
 
 
 
