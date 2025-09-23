@@ -78,6 +78,25 @@ v = (int *) realloc(v, (n+1)*sizeof(int)); --- pode ser (n-1) --- voce pode aume
 
 se o v já tem a memoria, ele vai tentar aumentar mais o endereço nesse mesmo lugar que está --- se não tiver, vai buscar no lugar onde quer 
 
+--------------------------------
+MATRIZES (ponteiros de ponteiros)
+
+int **M;
+M = (int **) malloc (m * sizeof(int *));
+for (int i = 0; i < m; ++i)
+  M[i] = (int *) malloc (n * sizeof(int)); --- entrega um endereço de memoria do tipo ponteiro int 
+
+
+
+(int *) - transforma em ponteiro 
+(int **) - transforma em ponteiro de ponteiro
+char x = 'A';
+int t = x; --- não posso fazer isso porque um é do tipo char e outro é do tipo int --- podemos forçar essa interpretação do char como inteiro
+int t = (int)x; --- vai entregar x, que er achar, transformado em int (deixado espeficifado com parenteses na frente)
+ele não vai pedir isso na prova, tipo ele n vai descontar nota se esquecer, mas pode ser que ele pergunte
+
+malloc - serve para qualquer ponteiro que você tiver
+
 
 
 
