@@ -80,7 +80,7 @@ typedef struct {
   int topo;       // indice do topo da pilha
   int capacidade; // capacidade atual da pilha - você ve se precisa extender a capacidade 
 } Pilha;
------------------------------
+---------------------------------------
 // Função para inicializar a pilha com uma capacidade inicial
 void init(Pilha *pilha, int capacidade) {
   pilha->data = (int *)malloc(capacidade * sizeof(int));
@@ -91,6 +91,7 @@ void init(Pilha *pilha, int capacidade) {
 // Função para verificar se a pilha esta vazia
 int vazia(Pilha *pilha) {
   return pilha->topo == -1;
+}
 
 // Função para redimensionar a pilha dinamicamente
 void aumentar_capacidade(Pilha *pilha) {
@@ -99,8 +100,26 @@ void aumentar_capacidade(Pilha *pilha) {
 }
 
 // Função para liberar a memoria alocada pela pilha
+void free_pilha(Pilha *pilha) {
+  free(pilha->data);
+  pilha->topo = pilha->capacidade = -1;
+}
 
+// Função para adicionar um elemento ao topo da pilha
+void push(Pilha *pilha, int valor) {
+  if (pilha-> topo == pilh->capacidade -1) {
+    aumentar_capacidade(pilha);
+  }
+  pilha->data[++pilha->topo} = valor;
+}
 
+// Função para remover e retornar o elemento do topo da pilha
+int pop(Pilha *pilha) {
+  if (!vazia(pilha)) // se a pilha não esta vazia
+    return pilha->data[pilha->topo--];
+  printf("Erro: Pilha vazia. \n"); // para o usuario saber se a pilha esta vazia
+
+--------------------------------------------
 // variavel de diferentes tipos
 int main() {
 char x = 'A';
@@ -118,40 +137,6 @@ int y = (int)x; // alguns compiladores não possuem essa função automatica, en
 printf("Hello World  %d", y);
 return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
