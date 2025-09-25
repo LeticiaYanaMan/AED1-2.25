@@ -71,16 +71,76 @@ x = pilha[--t]; (x vira 'I' e t volta a ser 8 - os proximos espaços estão vazi
 (se voce chegar no final da pilha mas ainda quer usar (adicionar) algo, voce pode cidar REALLOC -- se tiver alguma variavel que aponta para as memorias ANTES de dar realloc, elas continuam apontando para esse 
             mesmoe spaço de memoria -- ao dar realloc, voce precisa mudar a variavel que apontava para essa memoria, porque ela pode ter mudado de lugar para conseguir comportar todos os espaços pedidos
 
--------------------------------
+------------------------------- um exemplo de pilha :D
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct {
   int *data;      // ponteiro para armazenar os elementos da pilha
   int topo;       // indice do topo da pilha
-  int capacidade; // capacidade atual da pilha
+  int capacidade; // capacidade atual da pilha - você ve se precisa extender a capacidade 
 } Pilha;
 -----------------------------
+// Função para inicializar a pilha com uma capacidade inicial
+void init(Pilha *pilha, int capacidade) {
+  pilha->data = (int *)malloc(capacidade * sizeof(int));
+  pilha->topo = -1; //para saber que a pilha estva vazia 
+  pilha->capacidade = capacidade;
+}
+
+// Função para verificar se a pilha esta vazia
+int vazia(Pilha *pilha) {
+  return pilha->topo == -1;
+
+// Função para redimensionar a pilha dinamicamente
+void aumentar_capacidade(Pilha *pilha) {
+  pilha->capacidade *= 2;
+  pilha->data = (int *)realloc(pilha->data, pilha->capacidade *sizeof(int));
+}
+
+// Função para liberar a memoria alocada pela pilha
+
+
+// variavel de diferentes tipos
+int main() {
+char x = 'A';
+int y = x; // o proprio compilador entende que precisa mudar o tipo de variavel
+printf("Hello World  %d", y);
+return 0;
+}
+
+vai sair Hello World 65 
+teoricamente, deveria fazer 
+
+int main() {
+char x = 'A';
+int y = (int)x; // alguns compiladores não possuem essa função automatica, então precisava indicar para que tipo de variavel voce estava mudando
+printf("Hello World  %d", y);
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
