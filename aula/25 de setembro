@@ -118,6 +118,32 @@ int pop(Pilha *pilha) {
   if (!vazia(pilha)) // se a pilha não esta vazia
     return pilha->data[pilha->topo--];
   printf("Erro: Pilha vazia. \n"); // para o usuario saber se a pilha esta vazia
+}
+
+//Função para retornar o elemento do topo da pilha sem remove-lo
+int peek(Pilha *pilha) {
+  if (vazia(pilha)) {
+    printf("Erro: Pilha vazia. \n");
+    exit(1);          // exit 1 significa erro --- exit 0 significa que o codigo rodou sem problemas
+  }
+  return pilha->data[pilha->topo];
+
+//UM EXEMPLO DE USO DE PILHA - PILHAS: VETOR DINÂMICO
+int main() {
+  Pilha pilha;
+  init(&pilha, 2); // incializa pilha com capacidade 2
+  push(&pilha, 10);
+  push(&pilha, 20);
+  push(&pilha, 30); // aqui, pilha sera redimensionada
+
+  printf("Elemento no topo: %d\n", peek(&pilha)); // imprime 30
+  printf("Removendo: %d\n", pop(&pilha)); // remove 30
+  printf("Elemento no topo: %d\n", peek(&pilha)); //imprimri 20
+
+  free_pilha(&pilha); // liberar a memoria da pilha -- libera só pilha data (indicado pela finção free_pilha que definimos antes) 
+         // se aqui ele der um pilha->topo = 5 vai estar errado, porque pilha não é ponteiro para dar -> (teria que escrever pilha.topo = 5) --- o erro foi na formatação, ele valeria se fosse pilha.topo
+  return 0;
+}
 
 --------------------------------------------
 // variavel de diferentes tipos
