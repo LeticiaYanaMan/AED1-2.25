@@ -1,1 +1,101 @@
+//////////////////////////////////////////////////////////////////////////////
+--------------------------------- qual o resultafdo desse codigo?
+
+void troca(int *a, int *b) {
+  int temp;
+  *a = *b;
+  *b = temp;
+  a = NULL;               
+}
+
+
+int v1 = 10, v2 = 8;
+int* p = &v1;
+troca(p, &2);
+printf("%d, %d", v1, v2);
+
+--------------------------------- saída: 8, 10
+////////////////////////////////////////////////////////////////////////////////
+--------------------------------- qual o resultado desse codigo?
+
+void troca(int *a, int *b) {
+  int temp;
+  *a = *b;
+  *b = temp;
+  a = NULL; 
+  a = malloc(sizeof(int));    // 
+  *a = 50;
+}
+
+
+int v2 = 8;
+int* p = v1;
+p = malloc(sizeof(int));
+troca(p, &2);
+printf("%d, %d", *p, v2);
+
+--------------------------------- saída: 8, 10
+///////////////////// AAAAAAAAAARGGGGGGGGGG N ENTENDI NADA 
+
+typedef int* pint;
+void troca (pint p) {
+  p = NULL; //mudar aqui, tanto faz porque n sai dessa função - não faz efeito
+}
+
+Dado pint p = malloc(sizeof(int));
+troca(p);
+printf("%p", a);
+
+///////////////// PILHA
+
+Pilhas são TAD que permitem a inserção e remoção de elementos, dada a regra: "sempre que houver uma remoção, o elemento a remover será o mais recente ou o último que foi inserido na estrutura"
+O último que entrou foi o primeiro a sair (LIFO - Last In, First Out) 
+
+------------------ primeira forma de fazer isso: Vetores
+Push = inserir elemento no topo da fila == pilha[t++] = y;
+Pop = remover elemento do topo da fila == x = pilha[--t];
+Peek = obter o valor do topo sem remover; == x = pilha[t-1]
+
+Implementação com vetores:
+
+t como índice = ultimo elemento da pilha (se estiver vazio, t = -1) - o primeiro elemento de um vetor é 0, então se n tem nad ano zero, o indice indica -1
+t como tamanho da pilha - capacidade maxima que você pode ter (se estiver vazio, t = 0)
+
+---------------- 
+
+y = 'I';
+pilha[t++] = y;
+(se o tamanho inicial da pilha era 8, o elemento 'I' é adicionado no espaço 8 e t vira 9);
+x = pilha[--t]; (x vira 'I' e t volta a ser 8 - os proximos espaços estão vazios)
+(no peek, se fizer t--, o t vai mover e vou perder o que estiver armazenado no ultimo indice, por isso fazemos t-1)
+(se voce chegar no final da pilha mas ainda quer usar (adicionar) algo, voce pode cidar REALLOC -- se tiver alguma variavel que aponta para as memorias ANTES de dar realloc, elas continuam apontando para esse 
+            mesmoe spaço de memoria -- ao dar realloc, voce precisa mudar a variavel que apontava para essa memoria, porque ela pode ter mudado de lugar para conseguir comportar todos os espaços pedidos
+
+-------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+  int *data;      // ponteiro para armazenar os elementos da pilha
+  int topo;       // indice do topo da pilha
+  int capacidade; // capacidade atual da pilha
+} Pilha;
+-----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
