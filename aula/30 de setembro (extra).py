@@ -38,7 +38,28 @@ for x in lista:
   if x > 0: # para ver se é maior que 0 
     print(x)
 
-######################################
+##########################################
+
+a = [10, 20, 30, 40, 50]
+a[1] = 25
+print(a) 
+#imprime certinho a lista, não precisa colocar num for 
+
+##########################################
+
+matriz = [[8, 10, 20]
+          [20, 30, 40]
+          [50, 60, 70]]
+#bem mais facil de declarar matrizes
+
+##########################################
+
+
+
+
+
+
+
 
 
 
