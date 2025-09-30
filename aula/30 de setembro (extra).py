@@ -54,9 +54,10 @@ matriz = [[8, 10, 20]
 
 ##########################################
 
-
-
-
+#Linguagem C é uma lingaugem Compilada 
+#Linguagem Python é uma linguagem interpretada --- significa que é mais compitado na interface mas não entendemos como funciona na parte de tras 
+#C é limitado em bibliotecas, Python é mais vasta 
+#C é mais rapida e com uma sintxe completa --- diferente de python 
 
 
 
