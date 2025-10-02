@@ -43,8 +43,42 @@ int main() {
   push(&pilha, 3);
   push(&pilha, 4);
 
+/**
+Escreva uma função que inverta a ordem das letras de cada palavra de
+uma sentença, preservando a ordem das palavras. Suponha que as palavras da sentença
+são separadas por espaços. A aplicação da operação à sentença AMU MEGASNEM
+ATERCES, por exemplo, deve produzir UMA MENSAGEM SECRETA.
+**/
 
+#include <stdio.h>
+#include <string.h>
 
+int main() {
+    char str[50];
+    int i=0, a=0, tam=0, tampala=0, aux=0;
+    fgets(str, sizeof(str), stdin);
+    tam = strlen(str) - 2;
+    while (str[k] != '\0') {
+        for (i = aux; str[i] != ' '; i++) {
+            tampala++;
+            aux++;
+        }
+        if (tampala == aux) {
+            for (i = tampala; i >= 0; i--) {
+                printf("%c", str[i]);
+            }
+        }
+        else {
+            for (i = aux; i >= aux - tampala; i--) {
+                printf("%c", str[i]);
+            }
+        }
+        a += aux;
+        aux = tampala;
+        tampala = 0;
+    }
+    return 0;
+}
 
 
 
