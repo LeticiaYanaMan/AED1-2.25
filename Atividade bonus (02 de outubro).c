@@ -3,53 +3,44 @@ Suponha que os números inteiros 1, 2, 3, 4 são colocados, nesta ordem, numa pi
 zero ou mais elementos da pilha. Cada número retirado da pilha é impresso numa folha de papel. Por exemplo, a sequência de operações E, E, D, E, D, D, E, D, onde E
 signica ”empilhar o próximo número da sequência” e D signica ”desempilhar”, produza impressão da sequência 2, 3, 1, 4. Quais das 24 permutações de 1, 2, 3, 4 podem ser
 obtidas desta maneira?
-**/
+**/ python
 
-#include <stdio.h>
-#include <stdlib.h>
+def achar_permut(lst):
+    res = set()
 
-typedef struct {
-  int *data;
-  int topo;
-  int capacidade;
-} Pilha 
+    def gera(ent, pil, sai):
+        if not ent and not pil:
+            res.add(tuple(sai))
+            return
 
-void init(Pilha *pilha, int capacidade) {
-  pilha->data = (int *)malloc(capacidade * sizeof(int));
-  pilha->topo = -1;
-  pilha->capacidade = capacidade;
-}
+        if ent:
+            x = ent[0]
+            gera(ent[1:], pil + [x], sai)
 
-void push(Pilha *pilha, int valor) {
-  if (pilha-> topo == pilh->capacidade -1) {
-    aumentar_capacidade(pilha);
-  }
-  pilha->data[++pilha->topo} = valor;
-}
+        if pil:
+            t = pil[-1]
+            gera(ent, pil[:-1], sai + [t])
 
-int peek(Pilha *pilha) {
-  if (vazia(pilha)) {
-    printf("Erro: Pilha vazia. \n");
-    exit(1);           
-  }
-  return pilha->data[pilha->topo];
-}
+    gera(list(lst), [], [])
+    return sorted([list(p) for p in res])
 
-int main() {
-  Pilha pilha;
-  init(&pulha, 4);
-  push(&pilha, 1);
-  push(&pilha, 2);
-  push(&pilha, 3);
-  push(&pilha, 4);
+if __name__ == "__main__":
+    nums = [1, 2, 3, 4]
+    perms = achar_permut(nums)
+
+    for p in perms:
+        print(p)
+    
+    print(f"Total de permutações: {len(perms)}")
 
 /**
 Escreva uma função que inverta a ordem das letras de cada palavra de
 uma sentença, preservando a ordem das palavras. Suponha que as palavras da sentença
 são separadas por espaços. A aplicação da operação à sentença AMU MEGASNEM
 ATERCES, por exemplo, deve produzir UMA MENSAGEM SECRETA.
-**/
+**/ C
 
+---------------------- CASSEMIRO
 #include <stdio.h>
 #include <string.h>
 
@@ -80,6 +71,42 @@ int main() {
     return 0;
 }
 
+---------------------------- VIC
+
+#include <stdio.h>
+#include <string.h>
+
+void inverter(char str[], int i, int f) {
+    while (i < f) {
+        char aux = str[i];
+        str[i] = str[f];
+        str[f] = aux;
+        i++;
+        f--;
+    }
+}
+
+int main() {
+    char frase[1001];
+    fgets(frase, sizeof(frase), stdin);
+    
+    int len = strlen(frase);
+    if (len > 0 && frase[len-1] == '\n') {
+        frase[len-1] = '\0';
+        len--;
+    }
+
+    int inicio = 0;
+    for (int i = 0; i <= len; i++) {
+        if (frase[i] == ' ' || frase[i] == '\0') {
+            inverter(frase, inicio, i-1);
+            inicio = i + 1;
+        }
+    }
+
+    printf("%s\n", frase);
+    return 0;
+}
 
 
 
