@@ -1,3 +1,7 @@
 PROVA DA TERÇA QUE VEM
 
+FILA
+- aprender a criar e manipular filas com vetores dinamicos
 
+filas são TAD que permitem a inserção e remoção de elementos, mais especificamente uma fila segue a regra
+FIFO - First in, First Out --- sempre que houver remoção, o elemento a remover será o mais antigo ou o primeiro que foi inserido na estrutura
