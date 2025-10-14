@@ -34,6 +34,44 @@ se o vetor fosse estático, não poderiamos adicionar mais nada mas, como há me
 nisso, daria um problema porque haveria muito desperdicio de memoria 
 por isso, há o conceito de fila circular
 
+0     1       2       3        4      5        6    7    8      9
+                     555      777    888      
+                      s                        t               N -1
+
+nesse caso, o tamanho (ou numero de elemntos da fila) é t -s
+N é a capacidade maxima
+s == t -> fila vzia        t == N -> fila cheia 
+
+insert:                      fila[t++] = y;                           sempre e quando t < N
+remove:                      x = fila[s++];                           sempre e quando s < t (fila não vazia)
+procurar dentro da fila:     for (i = s; i < t && x != fila[i]; i++)  se achou x: s <= i < t             se não achou: i = t
+
+0      1      2      3      4      5      6      ...      N-1
+                    453    678    435    111              456
+quero adicionar o valor 222, mas não tem mais espaço no vetor
+
+0      1      2      3      4      5      6      ...      N-1
+222                 453    678    435    111              456
+voce pode decidir que a ultima que vc preencher (no caso 1 - deixando uma casa vazia entre o primeiro antigo do ultimo novo) fica vazia - professor recomendou isso 
+      a condição fica bem clara quando está cheia 
+
+0      1      2      3      4      5      6      ...      N-1
+222    342   349           453    678    111              456
+                            t       s
+
+nesse caso, precisamos ter uma nova flag indicando? Não, porque ocupa muita memoria
+infelizmente, precisamos fazer um realloc 
+
+0      1      2      3      4      5      6      ...      N-4      N-3
+342   349                  453    678    111              456      222
+
+vai passando e, conforme vai passando, aumenta uma memoria ali no fundo e, o que vinha depois, passa uma casa para frente - note que o espaço na casa 3 fica em branco e começa a partir da 4
+
+
+
+
+
+
 
 
 
