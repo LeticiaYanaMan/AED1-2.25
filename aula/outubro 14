@@ -61,12 +61,13 @@ voce pode decidir que a ultima que vc preencher (no caso 1 - deixando uma casa v
 
 nesse caso, precisamos ter uma nova flag indicando? Não, porque ocupa muita memoria
 
-e se eu quiser adicionar mais um numero?
+e se eu quiser adicionar mais um numero? (098)
 infelizmente, precisamos fazer um realloc 
 
-0      1      2      3      4      5      6      ...      N-2      N-1
+                                                                  vira uma nova ultima casa
+0      1      2      3      4      5      6      ...      N-1       N
 342   349    098           453    678    111              456      222
-
+              (!)                                                realocou! saiu da casa 0
 vai passando e, conforme vai passando, aumenta uma memoria ali no fundo e, o que vinha depois, passa uma casa para frente 
       note que o espaço na casa 3 fica em branco e começa a partir da 4
 
