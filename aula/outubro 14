@@ -5,3 +5,24 @@ FILA
 
 filas são TAD que permitem a inserção e remoção de elementos, mais especificamente uma fila segue a regra
 FIFO - First in, First Out --- sempre que houver remoção, o elemento a remover será o mais antigo ou o primeiro que foi inserido na estrutura
+
+fila é um vetor - pode ser um alista (vai ver depois) 
+quando chega um elemento, ele entra na primeira casa. O seguinte elemento, entra na segunda. O seguinte, na terceira....
+quando chama o primeiro, você o remove e poderia passar todos uma casa para frente, mas, na fila, voce exclui a primeira casa
+
+flags - indicam onde está tal elemento 
+
+0       1      2       3     4       5
+       111    222    333    444     555
+               s             t       q
+
+a flag "s" indica o inicio da fila e o "t" indica o final da fila --- (t-s) + 1
+pode ter mais de uma flag - por exemplo, podemos calcular (q-s) + 1 para saber o tamanho de outra parte da fila
+
+
+0       1      2       3     4       
+       111    222    333    444    
+        s                    t      
+
+caso t = s --- só temos um elemento
+caso t < s, não há elementos na fila 
