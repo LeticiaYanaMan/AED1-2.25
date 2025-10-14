@@ -13,8 +13,8 @@ quando chama o primeiro, você o remove e poderia passar todos uma casa para fre
 flags - indicam onde está tal elemento 
 
 0       1      2       3     4       5
-       111    222    333    444     555
-               s             t       q
+              222    333    444     555
+               s             q       t
 
 a flag "s" indica o inicio da fila e o "t" indica o final da fila --- (t-s) + 1
 pode ter mais de uma flag - por exemplo, podemos calcular (q-s) + 1 para saber o tamanho de outra parte da fila
@@ -26,3 +26,16 @@ pode ter mais de uma flag - por exemplo, podemos calcular (q-s) + 1 para saber o
 
 caso t = s --- só temos um elemento
 caso t < s, não há elementos na fila 
+
+0     1       2       3        4      5
+                     555      777    888
+                      s               t
+se o vetor fosse estático, não poderiamos adicionar mais nada mas, como há memoria dinamica, conforme avançamos, poderiamos dar malloc 
+nisso, daria um problema porque haveria muito desperdicio de memoria 
+por isso, há o conceito de fila circular
+
+
+
+
+
+
