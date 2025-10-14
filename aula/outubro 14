@@ -71,8 +71,10 @@ infelizmente, precisamos fazer um realloc
 vai passando e, conforme vai passando, aumenta uma memoria ali no fundo e, o que vinha depois, passa uma casa para frente 
       note que o espaço na casa 3 fica em branco e começa a partir da 4
 
+ 0        1       2       3      4        5         6      7       8       9
+ 44      55      66      77      88                00      11      22      33
 
-
+**a) frente**
 
 
 
