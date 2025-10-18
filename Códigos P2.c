@@ -54,7 +54,8 @@ int main() {
 		// Depois, faremos *p + 9, indicando que queremos 9 “casas” depois da variavel v[k], ou seja, v[k + 9].
 
   // data *p; data x; p = *x; 	p->dia = 31 equivale a x.dia = 31 e a (*p).dia = 31	
-  // printf("%d", p) vai imprimir o que p está apontando ; printf("%d", &p) vai imprimir o endereço de p
+  // printf("%d", *p) vai imprimir o que p está apontando ; printf("%d", &p) vai imprimir o endereço de p; 
+		//printf("%d", p) vai imprimir o endereço da variavel para a qual p aponta
 
 
 // ----------------------------------------------------------------------------------------
