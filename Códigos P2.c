@@ -141,6 +141,49 @@ int main() {
 // ----------------------------------------------------------------------------------------
 // FILAS - Capítulo 5
 
+// criação de uma estrutura de fila
+typedef struct { 
+	int *data;
+	int t; // topo da fila
+	int s; // primeiro da fila
+	int cap; // capacidade máxima da fila
+} Fila;
+
+// insere um valor na fila
+void insert(int x, int s, int *t) { // insere o valor x - *s é começo e t é final
+	if ((*t + 1) % cap != s) { // se a fila não está cheia (considerando o espaço vaz
+		fila[*t] = x; // vai adicionar 
+		*t = (*t+1) % cap; // vai alterar o valor do final
+	}
+}
+
+// remove um valor da fila
+int remove(int *s, int t) { // *s é a primeira posição e t é a última
+	int x = -1;
+	if (*s != t) { //se a fila não está vazia
+		x = fila[*s++]; // retirar o valor e alterar a posição *s
+		if (*s == cap) *s = 0; // volta para o início, indica que encheu  
+	}
+	return x; // se a fila estiver vazia, vai retornar -1
+}
+
+// Fila Circular 
+void FilaCircular(Fila *fila) {
+	int novaCapacidade = fila->cap + 5; // aumenta o valor que indica a capacidade
+	int *novaData = malloc(novaCapacidade * sizeof(int)); // cria num novo vetor com tamanho da fila nova
+
+	int j = 0;
+	for (int i = fila->s; i = fila->t; i = (i +1) % fila->cap) {
+		novaData[j++] = fila->data[i]; // transfere os dados da fila anterior
+	}
+	free(fila->data);
+	fila->data = novaData; // tranforma essa nova lista na que a gente acessa com *fila
+	fila->s = 0; // tranforma essa nova lista na que a gente acessa com *fila
+	fila->t = j; // tranforma essa nova lista na que a gente acessa com *fila
+	fila->cap = novaCapacidade; // tranforma essa nova lista na que a gente acessa com *fila
+}
+
+
 
 
 
