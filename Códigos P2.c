@@ -183,11 +183,29 @@ void FilaCircular(Fila *fila) {
 	fila->cap = novaCapacidade; // tranforma essa nova lista na que a gente acessa com *fila
 }
 
+// ----------------------------------------------------------------------------------------
+// ARQUIVOS 
 
+//normal - ler
+FILE *file = fopen("data.txt", "r");
+//normal - escrever
+FILE *file = fopen("data.txt", "w");
+// escrever dados
+fprintf(file, "Nome: %s, Idade: %d\n", "Alice", 25);
+// ler dados
+fscanf(file, "%s %d", name, &age);
 
+// binário - ler
+FILE *file = fopen("data.txt", "rb");
+// binário - escrever
+FILE *file = fopen("data.txt", "wb");
+// binario - escrever dados
+fwrite(&a1, sizeof(student), 1, file);
+// binario - ler dados
+fread(&a1, sizeof(student), 1, file); // em fwrite e em fread, considere que temos "student a1"
 
-
-
+//fechar arquivo
+fclose(file);
 
 
 
