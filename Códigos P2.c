@@ -47,6 +47,32 @@ int main() {
 // Anotações importante sobre ponteiros, vetores e tal
   // Ex. D.4.1 ---- "v + 3" é igual a v[3]
 
+  // D.4.3 
+  	// int v[100], k;  quais são as operações para: &v[k+9]
+		// k é menor que 90, ou ultrapassará o limite do vetor. 
+		// Criaremos um ponteiro (*p) que apontará o endereço v + k (ou seja, endereço de v[k]). 
+		// Depois, faremos *p + 9, indicando que queremos 9 “casas” depois da variavel v[k], ou seja, v[k + 9].
+
+// ----------------------------------------------------------------------------------------
+// Alocação Dinâmica de memória (Apêndice F)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n;
+	scanf(”%d”, &n);
+	int *v;
+	v = malloc(n * sizeof(int)); // cria um vetor dinâmico com memoria n * int
+	for (int i = 0; i < n; i++) {
+		scanf(“%d”, &v[i]);
+	}
+	for (int i = n; i > 0; i- -) {
+		printf(“%d”, v[i-1]); // imprime os números inseridos inversamente
+	}
+	return 0;
+}
+
 // ----------------------------------------------------------------------------------------
 // PILHAS
 
