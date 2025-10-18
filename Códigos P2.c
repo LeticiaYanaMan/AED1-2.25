@@ -53,6 +53,10 @@ int main() {
 		// Criaremos um ponteiro (*p) que apontará o endereço v + k (ou seja, endereço de v[k]). 
 		// Depois, faremos *p + 9, indicando que queremos 9 “casas” depois da variavel v[k], ou seja, v[k + 9].
 
+  // data *p; data x; p = *x; 	p->dia = 31 equivale a x.dia = 31 e a (*p).dia = 31	
+  // printf("%d", p) vai imprimir o que p está apontando ; printf("%d", &p) vai imprimir o endereço de p
+
+
 // ----------------------------------------------------------------------------------------
 // Alocação Dinâmica de memória (Apêndice F)
 
@@ -83,4 +87,55 @@ typedef struct {
   int capacidade;
 } Pilha;
 
-// Adicionar algum dado a pilha
+// Inicializar a pilha
+void init(Pilha *pilha, int capacidade) {
+	pilha->data = (int *)malloc(capacidade * sizeof(int)); // o (int *) e sizeof(int) 
+		// esse int precisa condizer com a sua variavel data --- se *data for declarado como char, precisa trocar tudo por char
+	pilha->topo = -1;
+	pilha->capacidade = capacidade;
+}
+
+// Adicionar algum dado a pilha --- p[t++] = x
+void inserir(Pilha *pilha, int x) {
+	if (pilha->topo == pilha->capacidade - 1) { // se o topo for equivalente a capacidade -1, ou seja, se estiver cheia
+		pilha->capacidade *= 2; //duplica a capacidade da pilha
+		pilha->data = (int *)realloc(pilha->data, pilha->capacidade * sizeof(int)); // realloc(o que vai realocar, quanto precisa ser realocado)
+			// coloca que precisa realocar pilha->capacidade *sizeof(int) porque os dados estão armazenados como int
+
+// Remover algum dado da pilha --- x = p[--t];
+int remover(Pilha *pilha) { // o tipo de dado que vai sair no return precisa combinar com o tipo de *data declarado
+		return pilha->data[pilha->t--]; //mesma logica do x = p[t--]
+			// x equivale ao return e p[t--] equivale a pilha->data[aqui vem o topo (t) --]
+
+// 6.1.2 exercicio de inverter uma frase --- não do jeito que pede no enunciado mais foi o que consegui fazer
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	Pilha *pilha;
+	char frase[1001];
+	fgets(frase, sizeof(frase), stdin); //quando for ler string, da o fgets
+	int size = strlen(frase); // para ver o tamanho da string, usa strlen
+	init(pilha, size);
+	inserir(pilha, frase, size);
+	char letra;
+	for (int i = 0; i < size; i++) {
+		letra = remover(pilha);
+		printf("%c", letra);
+	}
+	
+	free(pilha->data); // SEMPRE LEMBRE DE DAR O FREE 
+	return 0;
+}
+
+// notação pósfixa 
+// A B C D E F - * - G H * - * + I 3 - equivale a A + B * (C - (D * (E - F)) - (G * H)) - I * 3
+
+// Ex. 6.3.1 ---> (A + B) * D + E / (F + A * D) + C
+		// ( (A + B) * D) + ( E / (F + (A * D) ) ) + C  
+		//	 A B + D * E F A D * + C + / + 
+		// 	((A + B) * D) + E / (F + A * D) + C
+
+
+
