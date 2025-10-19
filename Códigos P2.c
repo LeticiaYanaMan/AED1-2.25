@@ -101,6 +101,9 @@ void inserir(Pilha *pilha, int x) {
 	if (pilha->topo == pilha->capacidade - 1) { // se o topo for equivalente a capacidade -1, ou seja, se estiver cheia
 		pilha->capacidade *= 2; //duplica a capacidade da pilha
 		pilha->data = (int *)realloc(pilha->data, pilha->capacidade * sizeof(int)); // realloc(o que vai realocar, quanto precisa ser realocado)
+	}
+ 	pilha->data[++pilha->topo} = valor;
+}
 			// coloca que precisa realocar pilha->capacidade *sizeof(int) porque os dados estão armazenados como int
 
 // Remover algum dado da pilha --- x = p[--t];
