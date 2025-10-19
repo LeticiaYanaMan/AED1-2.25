@@ -7,17 +7,17 @@ typedef struct {
 } Pilha;
 
 void init_pilha(Pilha *pilha, int i, int N) {
-    pilha[i]->data = (char *)malloc(N * sizeof(char));
-    pilha[i]->topo = -1;
-    pilha[i]->max = N;
+    pilha[i].data = (char *)malloc(N * sizeof(char));
+    pilha[i].topo = -1;
+    pilha[i].max = N;
 }
 
 void add_pilha(Pilha *pilha, int i, char par) {
-    if (pilha[i]->topo == pilha[i]->max - 1) {
-      pilha[i]->max += 2;
-      pilha[i]->data = (char *)realloc(pilha[i]->data, pilha[i]->max * sizeof(char));
+    if (pilha[i].topo == pilha[i].max - 1) {
+      pilha[i].max += 2;
+      pilha[i].data = (char *)realloc(pilha[i].data, pilha[i].max * sizeof(char));
     }
-    pilha[i]->data[==pilha[i]->topo] = par;
+    pilha[i].data[++pilha[i].topo] = par;
 }
 
 
