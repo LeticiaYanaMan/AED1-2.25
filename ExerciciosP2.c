@@ -18,21 +18,11 @@ while (fscanf("%d", &x));
 
 #include <stdio.h>
 
-int fatorial(int n) {
-    if (n == 0 || n == 1) {
-        return 1;
-    }
-    return (n * fatorial(n - 1));
-}
-
 int main() {
   int min, max;
   int count;
   scanf("%d %d", &min &max);
-  for (int i = 0; i < max; i++) {
-    if (fatorial(i) >= min && fatorial(i) <= max) {
-      count += 1;
-    }
+  while
   }
   printf("%d\n", count);
   return 0;
