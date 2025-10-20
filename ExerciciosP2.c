@@ -19,12 +19,19 @@ while (fscanf("%d", &x));
 #include <stdio.h>
 
 int main() {
-  int min, max;
-  int count;
-  scanf("%d %d", &min &max);
-  while
-  }
-  printf("%d\n", count);
-  return 0;
+    int min, max;
+    int count = 0;
+    int fat = 1;
+    int i =1;
+    scanf("%d %d", &min, &max);
+    while (fat <= max) {
+        if (fat >= min) {
+            count += 1;
+        }
+        i++;
+        fat *= i;
+    }
+    printf("%d\n", count);
+    return 0;
 }
     
