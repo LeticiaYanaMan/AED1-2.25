@@ -185,6 +185,33 @@ void FilaCircular(Fila *fila) {
 	fila->t = j; // tranforma essa nova lista na que a gente acessa com *fila
 	fila->cap = novaCapacidade; // tranforma essa nova lista na que a gente acessa com *fila
 }
+//MALU - filas circulares
+typedef struct{
+    int *itens;
+    int s; // indice do primeiro elemento
+    int t; //indice do ultimo elemento +1
+    int N; //capacidade da fila
+} fila;
+
+void insert(fila *fila, int y){ 
+    if((fila->t+1)%fila->N==fila->s){ 
+        printf("Cheia");
+        return;
+    } 
+    fila->itens[fila->t]=y;
+    fila->t=(fila->t+1)%fila->N;
+}
+
+int remove(fila *fila){ 
+    int x=-1;
+    if(fila->s!=fila->t){ //nao ta vazia
+        x=fila->itens[fila->s++];
+        if(fila->s==fila->N){
+            fila->s=0;
+        }
+    }
+    return x;
+}
 
 // ----------------------------------------------------------------------------------------
 // ARQUIVOS 
