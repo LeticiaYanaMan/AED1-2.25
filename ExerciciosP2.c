@@ -17,10 +17,17 @@ while (fscanf("%d", &x));
 // judge ex1 - fatorial
 
 void fat(int n) {
+  i *= i-1;
 
 
 int main() {
   int min, max;
+  int count;
   scanf("%d %d", &min &max);
-  for (int i = 0; i > min && i < max; i++) {
+  for (int i = 0; i < max; i++) {
+    
+  }
+  printf("%d\n", count);
+  return 0;
+}
     
