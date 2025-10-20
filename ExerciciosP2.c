@@ -12,3 +12,15 @@ while (fscanf("%d", &x));
   p = realloc(p, sizeof(int)*(++tam));
   p[tam-1] = x;
 
+
+
+// judge ex1 - fatorial
+
+void fat(int n) {
+
+
+int main() {
+  int min, max;
+  scanf("%d %d", &min &max);
+  for (int i = 0; i > min && i < max; i++) {
+    
