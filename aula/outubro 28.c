@@ -163,13 +163,24 @@ No* colocanaFila (int y, No* cabeca) {
 
 // TALVEZ TENHA QUE COLOCAR FILA CIRCULAR EXATAMENTE COM LISTA ENCADEADA --- alguns são muito grande como fila porque tem que percorrer tudo, essa é muito mais rapida
 
+
+
+
 // OPERACOES COM LISTAS E VETORES
 
-// COPIAR LISTA
+// COPIAR LISTA - COPIA POR VALOR
+  // está recursiva
+No* copiar_lista(No* lista) {
+  if(lista == NULL)
+    return NULL;
+  novo = malloc(sizeof(No));
+  novo->valor
 
-// INVERTER LISTA
 
-// CONCATENAR LISTA
+
+// INVERTER LISTA // pode inverter na propria lista ou criar uma copia invertida - depende do enunciado
+
+// CONCATENAR LISTA // juntar duas listas, A e B (pode colocar tudo em lista A ou criar uma nova lista C)
 
 
 
