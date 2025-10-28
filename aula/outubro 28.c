@@ -1,4 +1,4 @@
-// STRUTURA DE UM NÓ
+// ESTRUTURA DE UM NÓ
 
 typedef struct {
 int valor;
@@ -161,7 +161,15 @@ No* colocanaFila (int y, No* cabeca) {
   return novo; // a nova cabeca é o que voce inseriu (o ultimo elemento que voce inseriu), que aponta para o primeiro elemento que entrou
 } // a cabeca vai rotacionando e o primeiro você nu8nca perde, porque é sempre o prixmo do ultimo que você inseriu 
 
+// TALVEZ TENHA QUE COLOCAR FILA CIRCULAR EXATAMENTE COM LISTA ENCADEADA --- alguns são muito grande como fila porque tem que percorrer tudo, essa é muito mais rapida
 
+// OPERACOES COM LISTAS E VETORES
+
+// COPIAR LISTA
+
+// INVERTER LISTA
+
+// CONCATENAR LISTA
 
 
 
