@@ -175,14 +175,22 @@ No* copiar_lista(No* lista) {
     return NULL;
   novo = malloc(sizeof(No));
   novo->valor
+    }
 
 
 
-// INVERTER LISTA // pode inverter na propria lista ou criar uma copia invertida - depende do enunciado
+// INVERTER LISTA 
+      // pode inverter na propria lista ou criar uma copia invertida - depende do enunciado
 
-// CONCATENAR LISTA // juntar duas listas, A e B (pode colocar tudo em lista A ou criar uma nova lista C)
+// CONCATENAR LISTA 
+      // juntar duas listas, A e B (pode colocar tudo em lista A ou criar uma nova lista C)
 
 
+// LISTA CIRCULAR VERSÃO 2 - SEGUINDO A LOGICA DE UMA PILHA
+// INSERIR
+// REMOVER
+
+// DUPLAMENTE ENCADEADAS 
 
 
 
