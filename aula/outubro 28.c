@@ -191,7 +191,9 @@ No* copiar_lista(No* lista) {
 // REMOVER
 
 // DUPLAMENTE ENCADEADAS 
-
+     // INSERIR
+     // REMOVER
+     // CIRCULAR
 
 
 
