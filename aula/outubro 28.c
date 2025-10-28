@@ -159,7 +159,7 @@ No* colocanaFila (int y, No* cabeca) {
   cabeca->proximo = novo;
   cabeca->valor = y;
   return novo; // a nova cabeca é o que voce inseriu (o ultimo elemento que voce inseriu), que aponta para o primeiro elemento que entrou
-}
+} // a cabeca vai rotacionando e o primeiro você nu8nca perde, porque é sempre o prixmo do ultimo que você inseriu 
 
 
 
