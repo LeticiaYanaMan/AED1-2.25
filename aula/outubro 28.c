@@ -13,7 +13,7 @@ int main() {
   inserir_inicio(&lista, 1); //passa o endereço do ponteiro (uma variavel)
 
 // Lista encadeada -> encadeamento de nós
-// primeiro: cabeça
+// primeiro: cabeça -> último colocado
 
 //INSERIR COMEÇO
 void inserir_inicio(No** cabeca, int valor) { //dois ponteiros: endereço do endereço do nó
@@ -108,10 +108,58 @@ void remover(No** cabeca, it valor) {
   free(temp);
 }
 
-// ESTUDAR UM FIBONACCI ASSIM
+// EXERCICIO - ESTUDAR UM FIBONACCI ASSIM
 
+//PILHA:
+    //push: inserir_inicio
+    //pop: remover_primeiro
+    //peek: retornar valor da cabeça (o ultimo numero que entrou é a cabeca)
+  // LISTA ENCADEADA tem o mesmo conceio de PILHA
+    //NÚMERO DE ELEMENTOS DA PILHA - percorrer a pilha
+      // cria uma nova estrutura -> 
+    //Pilha vazia se cabeca == NULL
 
+//PILHA:
+    //insert: inserir_fim
+    //remove: remover_primeiro
+    //search: buscar
+  // cabeca = primeiro elemento da fila
+  // numero de elementos = percorrer a fila
+  // fila vazia = cabeca==NULL
+// custo muito alto para enfileiras (insert)
 
+//apontador para o fim
+// estrutura para um nó da fila + estrutura para representar a fila
+// init_fila
+// fução  para enfileirar (insert) elemento
+
+void enfileirar(Fila* fila, int valor) {
+  No* novo_no = (No*) malloc(sizeof(No));
+  novo_no->valor = valor;
+  novo_no->proximo = NULL;
+
+  if (fila->fim == NULL) { //vazia 
+    fila->inicio = novo_no;
+  } else {
+      fila->fim->proximo = novo_no;
+  }
+  fila->fim = novo_no; //fora do if - sempre faz 
+}
+
+// FILA CIRCULAR
+    // pode ser usando apenas No ou criando fila para incluir o No inicio
+    // lista tem um no cabeca que não é removida, mesmo se ficar vazia 
+    // prmeiro elemento -> proximo no da cabeca
+    /;ultimo elemento fica no no anterior a cabeca 
+
+No* colocanaFila (int y, No* cabeca) {
+  No* novo;
+  novo = malloc(sizeof(No));
+  novo->proximo = cabeca->proximo;
+  cabeca->proximo = novo;
+  cabeca->valor = y;
+  return novo; // a nova cabeca é o que voce inseriu (o ultimo elemento que voce inseriu), que aponta para o primeiro elemento que entrou
+}
 
 
 
