@@ -75,7 +75,7 @@ void increase(FCirc *fila, int inc) { //OBS3
 void list(FCirc *fila) {
     if (fila->tam == 0) { //OBS4
     // if(fila->t-1==fila->s){ //OBS2
-        printf("EMPTY\n");
+        printf("EMPTY"); //OBS5
     } else {
         int i=fila->s;
         do {
@@ -145,3 +145,4 @@ int main() {
 //     - isso pode não funcionar (funcionou com t == s no GDB, mas no terminal foi t-1 == s)
 //OBS3 - refeita inteira a função increase 
 //OBS4 - por estar dando muito problema a comparação entre t e s entre diferentes compiladores, troquei por fila->tam == 0
+//OBS5 - como vai ter o \n no final da funcao, tira da declaracao EMPTY
