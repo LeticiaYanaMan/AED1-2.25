@@ -76,7 +76,7 @@ void increase(FCirc *fila, int inc){
  
 void list(FCirc *fila){
     if(fila->t==fila->s){
-        printf("EMPTY/n");
+        printf("EMPTY\n");
     } else {
         int i=fila->s;
         do {
@@ -84,6 +84,7 @@ void list(FCirc *fila){
             i=(i+1)%fila->K;
         } while(i!=fila->t);
     }
+    printf("\n");
 }
  
 void print(FCirc *fila){
