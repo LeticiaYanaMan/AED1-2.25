@@ -67,12 +67,12 @@ void increase(FCirc *fila, int inc){
         novo_data[i] = -1;
     }
     
-    free(fila->data);
     fila->data = novo_data;
     fila->K = novo_K;
     fila->s = 0; 
     fila->t = fila->tam; 
-}
+    free(fila->data);
+} //OBS4
  
 void list(FCirc *fila){
     if(fila->t==fila->s){
@@ -144,3 +144,4 @@ int main(){
 //OBS1 - adicionar um "pula linha" \n depois da saída da função LIST - feito
 //OBS2 - arrumar increase
 //OBS3 - verificar print
+//OBS4 - mudar a função free(fila->data) para o final do void
