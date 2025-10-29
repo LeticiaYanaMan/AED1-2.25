@@ -19,7 +19,7 @@ void init_fila(FCirc *fila, int K) {
     }
 }
  
-int size(FCirc *fila){
+int size(FCirc *fila) {
     if(fila->t >= fila->s){
         return fila->t - fila->s;
     } else {
@@ -27,7 +27,7 @@ int size(FCirc *fila){
     }
 }
  
-void add(FCirc *fila, int n){
+void add(FCirc *fila, int n) {
     if((fila->t+1)%(fila->K)==fila->s){
         fila->s=(fila->s+1)%fila->K;
         fila->data[fila->t]=n;
@@ -39,7 +39,7 @@ void add(FCirc *fila, int n){
     }
 }
  
-void remover(FCirc *fila){
+void remover(FCirc *fila) {
     if(fila->t==fila->s){
         printf("CLEAR\n");
     } else {
@@ -53,28 +53,27 @@ void remover(FCirc *fila){
     }
 }
  
-void increase(FCirc *fila, int inc){
+void increase(FCirc *fila, int inc) {
     int novo_K = fila->K + inc;
     int *novo_data=(int*)malloc(novo_K*sizeof(int));
-    
     int tam = size(fila);
     
-    for(int i=0; i <fila->tam; i++){
+    for(int i=0; i < fila->tam; i++){
         novo_data[i] = fila->data[(fila->s+i)%fila->K];
     }
     
     for(int i = fila->tam; i < novo_K; i++){
         novo_data[i] = -1;
     }
-    
+
+    free(fila->data);
     fila->data = novo_data;
     fila->K = novo_K;
     fila->s = 0; 
     fila->t = fila->tam; 
-    free(fila->data);
-} //OBS4
+} //OBS3
  
-void list(FCirc *fila){
+void list(FCirc *fila) {
     if(fila->t==fila->s){
         printf("EMPTY\n");
     } else {
@@ -87,7 +86,7 @@ void list(FCirc *fila){
     printf("\n");
 } //OBS1
  
-void print(FCirc *fila){
+void print(FCirc *fila) {
     for(int i=0 ; i<fila->K ; i++){
         int cheio=0;
         if(fila->tam>0){
@@ -108,12 +107,12 @@ void print(FCirc *fila){
     printf("\n");
 }
  
-void end(FCirc *fila){
+void end(FCirc *fila) {
     free(fila->data);
     free(fila);
 }
  
-int main(){
+int main() {
     int K,n, inc;
     FCirc *fila;
     scanf("%d", &K);
@@ -144,4 +143,4 @@ int main(){
 //OBS1 - adicionar um "pula linha" \n depois da saída da função LIST - feito
 //OBS2 - arrumar increase
 //OBS3 - verificar print
-//OBS4 - mudar a função free(fila->data) para o final do void
+
