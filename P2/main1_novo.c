@@ -55,8 +55,14 @@ void remover(FCirc *fila) {
  
 void increase(FCirc *fila, int inc) {
     // fila->K += inc; 
-    
-    fila->data = malloc(fila->K * sizeof(int));
+    // fila->data = malloc(fila->K * sizeof(int));
+
+ //teste 
+    int novo_K = fila->K + inc;
+    int *novo_data=(int*)malloc(novo_K*sizeof(int));
+    int tam = size(fila);
+
+ // codigo ok
     if ((fila->K - fila->s) > (fila->t)) {
         for (int i = 0; i < fila->t; i++) {
              fila->data[(fila->K)%((fila->K)+1)] = fila->data[i];
@@ -66,6 +72,14 @@ void increase(FCirc *fila, int inc) {
          fila->s ++;
          fila->t ++;
     }
+
+ // teste de novo
+
+    free(fila->data);
+    fila->data = novo_data;
+    fila->K = novo_K;
+    fila->s = 0; 
+    fila->t = fila->tam; 
 } 
  
 void list(FCirc *fila) {
