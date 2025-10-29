@@ -48,7 +48,7 @@ void remover(FCirc *fila) {
         fila->s=(fila->s+1)%fila->K;
         fila->tam--;
         if(x!=-1){
-            printf("%d", x);
+            printf("%d\n", x);
         }
     }
 }
