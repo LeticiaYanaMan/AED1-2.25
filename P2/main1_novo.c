@@ -59,7 +59,7 @@ void remover(FCirc *fila) {
  
 void increase(FCirc *fila, int inc) { //OBS3
     fila->K += inc; 
-    fila->data = malloc(fila->K * sizeof(int));
+    fila->data = malloc(fila->K * sizeof(int)); // TROCAR por realloc(fila->data, fila->K * sizeof(int));
  
     if ((fila->K - fila->s) > (fila->t)) {
         for (int i = 0; i < fila->t; i++) {
