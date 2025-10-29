@@ -43,7 +43,8 @@ void add(FCirc *fila, int n) {
 }
  
 void remover(FCirc *fila) {
-    if(fila->t-1==fila->s){ //OBS2
+    if (fila->tam == 0) { //OBS4
+    // if(fila->t-1==fila->s){ //OBS2
         printf("CLEAR\n");
     } else {
         int x= fila->data[fila->s];
@@ -72,7 +73,8 @@ void increase(FCirc *fila, int inc) { //OBS3
 } 
  
 void list(FCirc *fila) {
-    if(fila->t-1==fila->s){ //OBS2
+    if (fila->tam == 0) { //OBS4
+    // if(fila->t-1==fila->s){ //OBS2
         printf("EMPTY\n");
     } else {
         int i=fila->s;
@@ -142,3 +144,4 @@ int main() {
 //OBS2 - a comparação entre t-1 == s, não t = s 
 //     - isso pode não funcionar (funcionou com t == s no GDB, mas no terminal foi t-1 == s)
 //OBS3 - refeita inteira a função increase 
+//OBS4 - por estar dando muito problema a comparação entre t e s entre diferentes compiladores, troquei por fila->tam == 0
