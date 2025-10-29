@@ -139,5 +139,6 @@ int main() {
 }
 
 //OBS1 - adicionar um "pula linha" \n depois da saída da função - feito
-//OBS2 - a comparação entre t-1 == s, não t = s
+//OBS2 - a comparação entre t-1 == s, não t = s 
+       - isso pode não funcionar (funcionou com t == s no GDB, mas no terminal foi t-1 == s)
 //OBS3 - refeita inteira a função increase 
