@@ -53,7 +53,7 @@ void remover(FCirc *fila) {
     }
 } //OBS1
  
-void increase(FCirc *fila, int inc) {
+void increase(FCirc *fila, int inc) { //OBS3
     fila->K += inc; 
     fila->data = malloc(fila->K * sizeof(int));
  
