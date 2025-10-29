@@ -54,17 +54,19 @@ void remover(FCirc *fila) {
 }
  
 void increase(FCirc *fila, int inc) {
-    FCirc V;
-    V.data = malloc(fila->K * sizeof(int));
+    // fila->K += inc; 
+    
+    fila->data = malloc(fila->K * sizeof(int));
     if ((fila->K - fila->s) > (fila->t)) {
-        for (i = 0; i < t; i++) {
-             V[((fila->K)%((fila->K)+1) = V[i];
+        for (int i = 0; i < fila->t; i++) {
+             fila->data[(fila->K)%((fila->K)+1)] = fila->data[i];
+             fila->t = fila->t -1;
         }
     } else {
          fila->s ++;
          fila->t ++;
     }
-} //OBS3
+} 
  
 void list(FCirc *fila) {
     if(fila->t==fila->s){
