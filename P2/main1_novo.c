@@ -18,7 +18,9 @@ void init_fila(FCirc *fila, int K) {
         fila->data[i] = -1;
     }
 }
- 
+
+// a funçao size foi substituida por tam dentro da funcao FCirc
+/* 
 int size(FCirc *fila) {
     if(fila->t >= fila->s){
         return fila->t - fila->s;
@@ -26,6 +28,7 @@ int size(FCirc *fila) {
         return fila->K - fila->s + fila->t;
     }
 }
+*/
  
 void add(FCirc *fila, int n) {
     if((fila->t+1)%(fila->K)==fila->s){
