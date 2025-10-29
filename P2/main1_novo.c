@@ -51,35 +51,21 @@ void remover(FCirc *fila) {
             printf("%d\n", x);
         }
     }
-}
+} //OBS1
  
 void increase(FCirc *fila, int inc) {
-    // fila->K += inc; 
-    // fila->data = malloc(fila->K * sizeof(int));
-
- //teste 
-    int novo_K = fila->K + inc;
-    int *novo_data=(int*)malloc(novo_K*sizeof(int));
-    int tam = size(fila);
-
- // codigo ok
+    fila->K += inc; 
+    fila->data = malloc(fila->K * sizeof(int));
+ 
     if ((fila->K - fila->s) > (fila->t)) {
         for (int i = 0; i < fila->t; i++) {
-             fila->data[(fila->K)%((fila->K)+1)] = fila->data[i];
+             fila->data[(fila->K+i)%(fila->K+1)] = fila->data[i];
              fila->t = fila->t -1;
         }
     } else {
          fila->s ++;
          fila->t ++;
     }
-
- // teste de novo
-
-    free(fila->data);
-    fila->data = novo_data;
-    fila->K = novo_K;
-    fila->s = 0; 
-    fila->t = fila->tam; 
 } 
  
 void list(FCirc *fila) {
@@ -149,7 +135,6 @@ int main() {
     return 0;
 }
 
-//OBS1 - adicionar um "pula linha" \n depois da saída da função LIST - feito
-//OBS2 - arrumar increase
-//OBS3 - verificar print
+//OBS1 - adicionar um "pula linha" \n depois da saída da função - feito
+
 
