@@ -40,7 +40,7 @@ void add(FCirc *fila, int n) {
 }
  
 void remover(FCirc *fila) {
-    if(fila->t==fila->s){
+    if(fila->t-1==fila->s){ //OBS2
         printf("CLEAR\n");
     } else {
         int x= fila->data[fila->s];
@@ -69,7 +69,7 @@ void increase(FCirc *fila, int inc) {
 } 
  
 void list(FCirc *fila) {
-    if(fila->t==fila->s){
+    if(fila->t-1==fila->s){ //OBS2
         printf("EMPTY\n");
     } else {
         int i=fila->s;
@@ -136,5 +136,5 @@ int main() {
 }
 
 //OBS1 - adicionar um "pula linha" \n depois da saída da função - feito
-
-
+//OBS2 - a comparação entre t-1 == s, não t = s
+//OBS3 - refeita inteira a função increase 
