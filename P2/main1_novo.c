@@ -85,7 +85,7 @@ void list(FCirc *fila){
         } while(i!=fila->t);
     }
     printf("\n");
-}
+} //OBS1
  
 void print(FCirc *fila){
     for(int i=0 ; i<fila->K ; i++){
@@ -140,3 +140,7 @@ int main(){
     }
     return 0;
 }
+
+//OBS1 - adicionar um "pula linha" \n depois da saída da função LIST - feito
+//OBS2 - arrumar increase
+//OBS3 - verificar print
