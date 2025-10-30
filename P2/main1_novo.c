@@ -32,6 +32,10 @@ int size(FCirc *fila) {
 
 
 void add(FCirc *fila, int n) {
+    for (int i = 0; i < fila->K; i++) {
+        if (fila->tam == 0) 
+           fila->s = fila->t = fila->tam = 0;
+    } 
     if((fila->t+1) % (fila->K) == fila->s) {
         fila->s = (fila->s+1) % fila->K;
         fila->data[fila->t] = n;
