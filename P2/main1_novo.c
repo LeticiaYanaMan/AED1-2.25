@@ -13,9 +13,9 @@ typedef struct{
 void init_fila(FCirc *fila, int K) {
     fila->K = K; 
     fila->data = (int *)malloc(fila->K * sizeof(int));
-    fila->s = fila->t=fila->tam=0;
+    fila->s = fila->t = fila->tam = 0;
     for(int i = 0; i < fila->K; i++){
-        fila->data[i] = -1;
+        fila->data[i] = -1; //identifica posicoes vazias para o print
     }
 }
 
@@ -29,17 +29,30 @@ int size(FCirc *fila) {
     }
 }
 */
- 
+
+/* testando uma nova add
 void add(FCirc *fila, int n) {
-    if((fila->t+1)%(fila->K)==fila->s){
-        fila->s=(fila->s+1)%fila->K;
-        fila->data[fila->t]=n;
-        fila->t=(fila->t+1)% fila->K;
+    if((fila->t+1) % (fila->K) == fila->s) {
+        fila->s = (fila->s+1) % fila->K;
+        fila->data[fila->t] = n;
+        fila->t = (fila->t+1) % fila->K;
     } else {
-        fila->data[fila->t]=n;
-        fila->t=(fila->t+1)%fila->K;
+        fila->data[fila->t] = n;
+        fila->t = (fila->t+1) % fila->K;
         fila->tam++;
     }
+}
+
+*/
+
+void add(FCirc *fila, int n) {
+    fila->data[fila->t] = n;
+    if (fila->tam == fila->K) {
+       fila->s = (fila->s + 1) % (fila->K);
+    } else {
+           fila->tam++;
+    }
+    fila->t = (fila->t +1) % (fila->K);
 }
  
 void remover(FCirc *fila) {
