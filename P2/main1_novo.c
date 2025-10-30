@@ -72,11 +72,11 @@ void increase(FCirc *fila, int inc) { //OBS3
     if ((fila->K - fila->s) > (fila->t)) {
         for (int i = 0; i < fila->t; i++) {
              fila->data[(fila->K+i)%(fila->K+1)] = fila->data[i];
-             fila->t = fila->t -1;
+             fila->t--;
         }
     } else {
-         fila->s ++;
-         fila->t ++;
+         fila->s++;
+         fila->t++;
     }
 } 
  
