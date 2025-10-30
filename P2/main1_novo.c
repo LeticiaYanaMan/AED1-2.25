@@ -30,7 +30,7 @@ int size(FCirc *fila) {
 }
 */
 
-/* testando uma nova add
+
 void add(FCirc *fila, int n) {
     if((fila->t+1) % (fila->K) == fila->s) {
         fila->s = (fila->s+1) % fila->K;
@@ -43,17 +43,7 @@ void add(FCirc *fila, int n) {
     }
 }
 
-*/
 
-void add(FCirc *fila, int n) {
-    fila->data[fila->t] = n;
-    if (fila->tam == fila->K) {
-       fila->s = (fila->s + 1) % (fila->K);
-    } else {
-           fila->tam++;
-    }
-    fila->t = (fila->t +1) % (fila->K);
-}
  
 void remover(FCirc *fila) {
     if (fila->tam == 0) { //OBS4
