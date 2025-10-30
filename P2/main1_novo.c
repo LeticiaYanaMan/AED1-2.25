@@ -66,8 +66,8 @@ void remover(FCirc *fila) {
  
 void increase(FCirc *fila, int inc) { //OBS3
     fila->K += inc; 
-    fila->data = malloc(fila->K * sizeof(int)); 
-    // fila->data = realloc(fila->data, fila->K * sizeof(int));
+    // fila->data = malloc(fila->K * sizeof(int)); 
+    fila->data = realloc(fila->data, fila->K * sizeof(int)); //OBS7
  
     if ((fila->K - fila->s) > (fila->t)) {
         for (int i = 0; i < fila->t; i++) {
@@ -155,3 +155,4 @@ int main() {
 //OBS4 - por estar dando muito problema a comparação entre t e s entre diferentes compiladores, troquei por fila->tam == 0
 //OBS5 - como vai ter o \n no final da funcao, tira da declaracao EMPTY
 //OBS6 - quando estiver vazio, reinicia a posicao de insercao do proximo elemento (no zero)
+//OBS7 - realoca memoria, nao vem do zero para ter um malloc
