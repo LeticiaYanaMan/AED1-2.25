@@ -23,3 +23,26 @@ int fatorial(int n) {
   return n * fatorial(n-1);
 }
 */
+
+/* 
+int max(int *V, int n) {
+  if (n == 1) return V[0];
+  int max = max[V+1, n-1]; // "V", por ser endereço na função, precisa colocar V+1 para retornar V[0+1] --- ai, dentro da recursividade, quando entramos em V+1, teremov V[1+1] = V[2]
+  if (V[0] >= max) return V[0]; 
+  return max;
+}
+*/
+
+/* quantidade de movimenos na torre de hanoi
+int hanoi(int n) {
+  if (n == 1) return 1;
+  return 2* hanoi(n-1) +1;
+}
+
+int main() {
+  int N;
+  scanf("%d", &N) {
+  printf("%d\n", hanoi(n));
+  } 
+  */
+
