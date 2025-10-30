@@ -32,7 +32,7 @@ int size(FCirc *fila) {
 
 
 void add(FCirc *fila, int n) {
-    for (int i = 0; i < fila->K; i++) {
+    for (int i = 0; i < fila->K; i++) { //OBS6
         if (fila->tam == 0) 
            fila->s = fila->t = fila->tam = 0;
     } 
@@ -154,3 +154,4 @@ int main() {
 //OBS3 - refeita inteira a função increase 
 //OBS4 - por estar dando muito problema a comparação entre t e s entre diferentes compiladores, troquei por fila->tam == 0
 //OBS5 - como vai ter o \n no final da funcao, tira da declaracao EMPTY
+//OBS6 - quando estiver vazio, reinicia a posicao de insercao do proximo elemento (no zero)
