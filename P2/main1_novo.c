@@ -66,23 +66,24 @@ void remover(FCirc *fila) {
  
 void increase(FCirc *fila, int inc) { //OBS3
     // fila->K += inc; 
-    /* int novo_K = fila->K + inc;
-    int *novo_data= malloc(novo_K * sizeof(int)); //OBS7 */
+    int novo_K = fila->K + inc;
+    /* int *novo_data= malloc(novo_K * sizeof(int)); //OBS7 */
 
     // fila->data = malloc(fila->K * sizeof(int)); 
-    fila->data = realloc(fila->data, fila->K * sizeof(int)); //OBS7
+    fila->data = realloc(fila->data, novo_K * sizeof(int)); //OBS7
     
     if ((fila->K - fila->s) > (fila->t)) { //TODO: if: altera t; else: altera s
         for (int i = 0; i < fila->t; i++) {
-             fila->data[(fila->K+i)%(fila->K+inc)] = fila->data[i]; //mudou 
+             fila->data[(fila->K+i)%(novo_K)] = fila->data[i]; //mudou 
             }
         fila->t--; //TODO: precisa fazer modulo de t (pode dar neg)
     } else { //TODO: for (colocar na frente)
          fila->s++; 
+         fila->t++;
     }
+    fila->K = novo_K;
     /* 
     fila->data = novo_data;
-    fila->K = novo_K;
     // fila->s = 0; 
     // fila->t = fila->tam; */
 } 
