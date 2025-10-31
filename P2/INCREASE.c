@@ -95,3 +95,55 @@ void increase(FCirc *fila, int inc) { //OBS3
     }
     fila->K = novo_K;
 }
+
+// ALTERAÇÕES 5
+
+
+void increase(FCirc *fila, int inc) {
+    FCirc aux;
+    aux.K = fila->K + inc;
+    aux.s = fila->s; //i
+    aux.t = fila->s; //j
+    aux.data = malloc(aux.K, sizeof(int)); //ou calloc
+     if (fila->t > fila->s) {
+        while(aux.s != aux.t) {
+            aux.data[aux.t] = fila->data[aux.s];
+            aux.s = (aux.s + 1) % fila->K;
+            aux.t = (aux.t + 1) % aux.K;
+        }
+     }
+     else if (fila->t < fila->s) {
+        if ((fila->K - fila->s) < fila->t ) {
+            aux.t = fila->s + inc;
+            while (aux.s != fila->t) {
+                aux.data[aux.t] = fila->data[aux.s];
+                aux.s = (aux.s + 1) % fila->K;
+                aux.t = (aux.t + 1) % aux.K;
+            }
+            fila->s = fila->s + inc;
+        }
+        else if ((fila->K - fila->s) >= fila->t) {
+            while(aux.s != fila->t) {
+                aux.data[aux.t] = fila->data[aux.s];
+                aux.s = (aux.s + 1) % fila->K;
+                aux.t = (aux.t + 1) % aux.K;
+            }
+        }
+     }
+     free(fila->data);
+     fila->K = aux.K;
+     fila->data = aux.data;
+     fila->t = aux.t;
+}
+
+
+
+
+
+
+
+
+
+
+
+
