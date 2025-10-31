@@ -31,11 +31,9 @@ int size(FCirc *fila) {
 */
 
 
-void add(FCirc *fila, int n) {
-    for (int i = 0; i < fila->K; i++) { //OBS6
-        if (fila->tam == 0) 
-           fila->s = fila->t = fila->tam = 0;
-    } 
+void add(FCirc *fila, int n) { 
+    if (fila->tam == 0) 
+        fila->s = fila->t = fila->tam = 0 ;//OBS6
     if((fila->t+1) % (fila->K) == fila->s) {
         fila->s = (fila->s+1) % fila->K;
         fila->data[fila->t] = n;
