@@ -60,7 +60,7 @@ void increase(FCirc *fila, int inc) { //OBS3
     }
 } 
 
-// ALTERAÇÕES 3
+// ALTERAÇÕES 3 - tirou o fila->t-- de dentro do for
 // TESTE1 - troca as posições corretamente mas falha no print depois do segundo increase
 // 10 (1/10) no judge - alguns casos estão dando runtime error (2/10) 
 void increase(FCirc *fila, int inc) { //OBS3
