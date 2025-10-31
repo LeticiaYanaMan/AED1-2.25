@@ -163,7 +163,63 @@ int main() {
 }
 */
 
+NO* colocanafila(int y, NO* cabeca) {
+  NO* novo;
+  novo = malloc(sizeof(NO));
+  novo->proximo = cabeca->proximo;
+  cabeca->proximo = novo;
+  cabeca->valor = y;
+  return novo;
+}
 
+// circular 2
+NO* inserir_circular(NO* lista, int x) {
+  // cria um novo no
+  NO* novo;
+  novo = malloc(sizeof(NO));
+  novo->dado = x;
+
+  if (lista == NULL) {
+    novo->proximo = novo;
+    lista = novo;
+  } else {
+    novo->proximo = lista->proximo;
+    lista->proximo = novo;
+  }
+  return lista;
+}
+
+
+// OPERAÇÕES EM LISTAS E VARIAÇÕES ------------------------------------------------------------
+// COPIAR LISTA (RECURSIVA)
+NO* copiar_lista(NO* lista) {
+  NO* novo = NULL;
+  if (lista == NULL) return NULL;
+  novo = malloc(sizeof(NO));
+  novo->valor = lista->valor;
+  novo->proximo = copiar_lista(lista->proximo);
+  return novo;
+}
+
+// INVERTER LISTA (ITERATIVA)
+NO* inverter_lista(NO* lista) {
+  NO* atual, ant, invertida = NULL;
+  atual = lista;
+  while (atual != NULL) {
+    ant = atual;
+    atual = atual->proximo;
+    ant->proximo = invertida;
+    invertida = ant;
+  }
+  return invertida;
+}
+
+// CONCATENAR (JUNTAR LISTAS) (RECURSIVA)
+NO* concatenar_lista(NO* primeira, NO* segunda) {
+  if (primeira == NULL) return segunda;
+  primeira->proximo = concatenar_lista(primeira->proximo, segunda);
+  return primeira;
+}
 
 
 
