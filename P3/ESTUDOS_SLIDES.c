@@ -153,7 +153,15 @@ Fila* criar_fila() {
   return nova_fila;
 }
 
-
+// FILA CIRCULAR ------------------------------------------------------------
+/*
+int main() {
+  NO* fila = NULL;
+  fila = malloc(sizeof(NO));
+  fila->proximo = fila;
+  fila = colocanafila(12,fila);
+}
+*/
 
 
 
