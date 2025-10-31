@@ -1,5 +1,5 @@
 //ORIGINAL
-//ele lê os valores mas não faz a troca de lugares corretamente
+//TESTE 1 - ele lê os valores mas não faz a troca de lugares corretamente
 
 void increase(FCirc *fila, int inc){ 
     int novo_K = fila->K + inc;
@@ -23,7 +23,7 @@ void increase(FCirc *fila, int inc){
 }
 
 //ALTERAÇÕES 1
-// não faz a troca corretamente e não lê direito
+// TESTE1 - não faz a troca corretamente e não lê direito
 void increase(FCirc *fila, int inc) {
     int novo_K = fila->K + inc;
     fila->data = realloc(fila->data, novo_K * sizeof(int)); 
@@ -41,4 +41,38 @@ void increase(FCirc *fila, int inc) {
 }
 
 // ALTERAÇÕES 2
+// TESTE1 - troca as posições corretamente mas não lê todos os valores direito 
+// 0 no judge
 
+void increase(FCirc *fila, int inc) { //OBS3
+    fila->K += inc; 
+    // fila->data = malloc(fila->K * sizeof(int)); 
+    fila->data = realloc(fila->data, fila->K * sizeof(int)); //OBS7
+ 
+    if ((fila->K - fila->s) > (fila->t)) {
+        for (int i = 0; i < fila->t; i++) {
+             fila->data[(fila->K+i)%(fila->K+1)] = fila->data[i];
+             fila->t--;
+        }
+    } else {
+         fila->s++;
+         fila->t++;
+    }
+} 
+
+// ALTERAÇÕES 3
+// TESTE1 - troca as posições corretamente mas falha no print depois do segundo increase
+// 10 (1/10) no judge - alguns casos estão dando runtime error (2/10) 
+void increase(FCirc *fila, int inc) { //OBS3
+    fila->K += inc; 
+    fila->data = realloc(fila->data, fila->K * sizeof(int)); //OBS7
+    
+    if ((fila->K - fila->s) > (fila->t)) { //TODO: if: altera t; else: altera s
+        for (int i = 0; i < fila->t; i++) {
+             fila->data[(fila->K-inc+i)%(fila->K+inc)] = fila->data[i]; //mudou 
+            }
+            fila->t--; //TODO: precisa fazer modulo de t (pode dar neg)
+    } else { //TODO: for (colocar na frente)
+        fila->s++; 
+    }
+}
