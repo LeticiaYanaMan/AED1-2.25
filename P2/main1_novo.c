@@ -74,19 +74,18 @@ void increase(FCirc *fila, int inc) { //OBS3
     
     if ((fila->K - fila->s) > (fila->t)) { //TODO: if: altera t; else: altera s
         for (int i = 0; i < fila->t; i++) {
-             fila->data[(fila->K+i)%(novo_K)] = fila->data[i]; //mudou 
+             fila->data[(fila->K+inc)%(novo_K)] = fila->data[i]; //mudou 
             }
-        fila->t = ((fila->t)%(fila->K)) -1; //TODO: precisa fazer modulo de t (pode dar neg)
+        fila->t = fila->t--; //TODO: precisa fazer modulo de t (pode dar neg)
     } else { //TODO: for (colocar na frente)
          fila->s++; 
          fila->t++;
     }
     fila->K = novo_K;
-    /* 
-    fila->data = novo_data;
+    // fila->data = novo_data;
     // fila->s = 0; 
     // fila->t = fila->tam; */
-} 
+}
  
 void list(FCirc *fila) {
     if (fila->tam == 0) { //OBS4
