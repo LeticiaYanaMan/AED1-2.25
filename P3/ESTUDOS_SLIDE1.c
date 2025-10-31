@@ -303,6 +303,11 @@ void inserir_inicio(Lista* lista, int valor) {
   }
 }
 
+void inserir_fim(Lista* lista, int valor) {
+  NO* novo_no = (NO*)malloc(sizeof(NO));
+  novo_no->valor = valor;
+
+  if (lista->inicio
 
 
 
