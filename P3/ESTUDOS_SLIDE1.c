@@ -221,6 +221,106 @@ NO* concatenar_lista(NO* primeira, NO* segunda) {
   return primeira;
 }
 
+// LISTAS DUPLAMENTE ENCADEADAS ------------------------------------------------------------
+
+// define o no diferentemente
+typedef struct NO {
+  int valor;
+  struct NO* proximo;
+  struct NO* anterior;
+} NO;
+
+NO* insereInicio(NO* inicio, int valor) {
+  NO* novo = (NO*)malloc(sizeof(NO));
+  novo->valor = valor;
+  novo->proximo = inicio;
+  novo->anterior = NULL;
+
+   if (inicio != NULL) inicio->anterior = novo;
+   return novo;
+}
+
+NO* insereFim(NO* inicio, int valor) {
+  NO* novo = (NO*)malloc(sizeof(NO));
+  novo->valor = valor;
+  novo->proximo = NULL;
+  if (inicio == NULL) {
+    novo->anterior = NULL;
+    return novo;
+  }
+  NO* fim = inicio;
+  while (fim->proximo != NULL)
+    fim = fim->proximo;
+  fim->proximo = novo;
+  novo->anterior = fim;
+  return inicio;
+
+NO* removeValor(NO* inicio, int valor) {
+  NO* atual = inicio;
+  while(atual != NULL && atual->valor != valor) 
+    atual = atual->proximo;
+  if (atual == NULL) {
+    printf("Valor não encontrado na fila\n");
+    return inicio;
+  }
+  if (atual->anterior != NULL) 
+    atual->anterior->proximo = atual->proximo;
+  else
+    inicio = atual->proximo;
+  if (atual->proximo != NULL) 
+    atual->proximo->anterior = atual->anterior;
+  free(atual);
+  return inicio;
+
+  
+// LISTAS DUPLAMENTE ENCADEADAS CIRCULARES ------------------------------------------------------------
+
+//estrutura para um nó
+typedef struct {
+  int valor;
+  struct NO* proximo;
+  struct NO* anterior;
+} NO;
+
+//estrutura para a lista
+typedef struct {
+  NO* inicio;
+  NO* fim;
+} Lista;
+
+void inserir_inicio(Lista* lista, int valor) {
+  NO* novo_no = (NO*)malloc(sizeof(NO));
+  novo_no->valor = valor;
+  novo_no->anterior = NULL;
+
+  if (lista->inicio == NULL) {
+    novo_no->proximo = NULL;
+    lista->fim = novo_no;
+  } else {
+    novo_no->proximo = lsita->inicio;
+    lista->inicio->anterior = novo_no;
+    lista->inicio = novo_no;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
