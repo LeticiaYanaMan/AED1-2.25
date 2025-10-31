@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-//NÓS
+//NÓS -------------------------------------------------------
 //ESTRUTURA
 typedef struct {
   int valor; 
@@ -116,7 +116,8 @@ void remover(NO** cabeca, int valor) {
   free(temp);
 }
 
-// PILHA 
+
+// PILHA -------------------------------------------------------
 // cabeca - topo da pilha
 // numero de elementos: percorrer a pilha (lista)
 // pilha vazia -> cabeca NULL
@@ -124,7 +125,7 @@ void remover(NO** cabeca, int valor) {
   // POP - remover_primeiro
   // PEEK - retornar valor da cabeca
 
-// FILA
+// FILA -------------------------------------------------------
 // cabeca - primeiro elemento da fila
 // numero de elementos: percorrer a fila (lista)
 // fila vazia -> cabeca NULL
