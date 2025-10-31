@@ -76,3 +76,22 @@ void increase(FCirc *fila, int inc) { //OBS3
         fila->s++; 
     }
 }
+
+
+// ALTERAÇÕES 4
+// TESTE1 - faz tudo certo, só que ao inves de adicionar 50, adiciona 40 (??)
+
+void increase(FCirc *fila, int inc) { //OBS3
+    int novo_K = fila->K + inc; 
+    fila->data = realloc(fila->data, novo_K * sizeof(int)); //OBS7
+    
+    if ((novo_K - fila->s) > (fila->t)) { //TODO: if: altera t; else: altera s
+        for (int i = 0; i < fila->t; i++) {
+             fila->data[(fila->K+i)%(novo_K)] = fila->data[i]; //mudou 
+            }
+            fila->t = novo_K; //TODO: precisa fazer modulo de t (pode dar neg)
+    } else { //TODO: for (colocar na frente)
+        fila->s++; 
+    }
+    fila->K = novo_K;
+}
