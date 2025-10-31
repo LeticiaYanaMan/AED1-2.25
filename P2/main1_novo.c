@@ -76,7 +76,7 @@ void increase(FCirc *fila, int inc) { //OBS3
         for (int i = 0; i < fila->t; i++) {
              fila->data[(fila->K+i)%(novo_K)] = fila->data[i]; //mudou 
             }
-        fila->t--; //TODO: precisa fazer modulo de t (pode dar neg)
+        fila->t = ((fila->t)%(fila->K)) -1; //TODO: precisa fazer modulo de t (pode dar neg)
     } else { //TODO: for (colocar na frente)
          fila->s++; 
          fila->t++;
