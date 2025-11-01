@@ -90,17 +90,19 @@ void increase(FCirc *fila, int inc) { //OBS3
      fila->t = aux.t;
 }
  
-void list(FCirc *fila){
-    if(fila->t==fila->s){
-        printf("EMPTY");
+void list(FCirc *fila) {
+    if (fila->tam == 0) { //OBS4
+    // if(fila->t-1==fila->s){ //OBS2
+        printf("EMPTY"); //OBS5
     } else {
         int i=fila->s;
         do {
             printf("%d ", fila->data[i]);
             i=(i+1)%fila->K;
         } while(i!=fila->t);
-    } printf("\n");
-}
+    }
+    printf("\n");
+} //OBS1
  
 void print(FCirc *fila){
     for(int i=0 ; i<fila->K ; i++){
