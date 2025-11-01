@@ -19,22 +19,14 @@ void init_fila(FCirc *fila, int K) {
     }
 }
  
-int size(FCirc *fila){
-    if(fila->t >= fila->s){
-        return fila->t - fila->s;
+void add(FCirc *fila, int n) {
+    if((fila->t+1) % (fila->K) == fila->s) {
+        fila->s = (fila->s+1) % fila->K;
+        fila->data[fila->t] = n;
+        fila->t=(fila->t+1) % fila->K;
     } else {
-        return fila->K - fila->s + fila->t;
-    }
-}
- 
-void add(FCirc *fila, int n){
-    if((fila->t+1)%(fila->K)==fila->s){
-        fila->s=(fila->s+1)%fila->K;
-        fila->data[fila->t]=n;
-        fila->t=(fila->t+1)% fila->K;
-    } else {
-        fila->data[fila->t]=n;
-        fila->t=(fila->t+1)%fila->K;
+        fila->data[fila->t] = n;
+        fila->t = (fila->t+1) % fila->K;
         fila->tam++;
     }
 }
