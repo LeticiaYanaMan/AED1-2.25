@@ -307,7 +307,20 @@ void inserir_fim(Lista* lista, int valor) {
   NO* novo_no = (NO*)malloc(sizeof(NO));
   novo_no->valor = valor;
 
-  if (lista->inicio
+  if (lista->inicio == NUL) {
+    novo_no->proximo = novo_no;
+    novo_no->anterior = novo_no;
+    lista->inicio;
+  } else {
+    NO* fim = lista->inicio->anterior;
+    novo_no->proximo = lista->inicio;
+    novo_no->anterior = fim;
+    fim->proximo = novo_no;
+    lista->inicio->anterior = novo_no;
+  }
+}
+
+
 
 
 
