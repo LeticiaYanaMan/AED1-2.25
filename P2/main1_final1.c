@@ -165,4 +165,4 @@ int main(){
 //OBS5 - como vai ter o \n no final da funcao, tira da declaracao EMPTY
 //OBS6 - quando estiver vazio, reinicia a posicao de insercao do proximo elemento (no zero)
 //OBS7 - tentei criar um vetor e ir, mas foi melhor com uma outra FCirc
-//OBS8 - adicionado para caso esqueça de colocar um numero depois do comando
+
