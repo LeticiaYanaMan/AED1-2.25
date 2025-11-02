@@ -295,7 +295,7 @@ void inserir_inicio(Lista* lista, int valor) {
 
   if (lista->inicio == NULL) {
     novo_no->proximo = NULL;
-    lista->fim = novo_no;
+    lista->inicio = novo_no;
   } else {
     novo_no->proximo = lsita->inicio;
     lista->inicio->anterior = novo_no;
