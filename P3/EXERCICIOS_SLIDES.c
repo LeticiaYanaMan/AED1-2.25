@@ -19,3 +19,6 @@
   // implemente uma função para imprimir todos os elementos da lista;
 
 // P3 - 2
+
+// Balanceamento de parenteses e de delimitadores 
+    // versão recursiva e iterativa
