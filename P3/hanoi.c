@@ -3,7 +3,7 @@
 
 void hanoi(int d, char og, char fim, char meio){
   if(d==1){
-    printf("Move de %d para %d", og, fim);
+    printf("Move de %c para %c\n", og, fim);
     return;
   }
     hanoi(d-1, og, meio, fim); //para mover da torre A para B, tendo C como intermediario
