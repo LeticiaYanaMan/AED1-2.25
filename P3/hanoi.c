@@ -11,6 +11,7 @@ void hanoi(int d, char og, char meio, char fim){
     printf("Move o disco %d de %c para %c", n, og, fim);
     hanoi(d-1, meio, og, fim); //move de B para C, agora A esta no meio
   }
+}
 
 int main(){
   int n;
