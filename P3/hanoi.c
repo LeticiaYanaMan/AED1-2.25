@@ -7,7 +7,7 @@ void hanoi(int d, char og, char fim, char meio){
     return;
   }
     hanoi(d-1, og, meio, fim); //para mover da torre A para B, tendo C como intermediario
-    printf("Move o disco %d de %c para %c", d, og, fim);
+    printf("Move o disco %d de %c para %c\n", d, og, fim);
     hanoi(d-1, meio, fim, og); //move de B para C, agora A esta no meio
 }
 
