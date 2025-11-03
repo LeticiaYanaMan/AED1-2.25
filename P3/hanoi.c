@@ -3,7 +3,7 @@
 
 void hanoi(int d, char og, char meio, char fim){
   if(d==1){
-    printf("Move de %d para %d", hanoi(og, fim));
+    printf("Move de %d para %d", og, fim);
     return;
   }
   else {
