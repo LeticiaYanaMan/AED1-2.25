@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int crescente(const void *a, const void *b) {
-    return (*(int*)a - *(int*)b);
+int cmp_par(const void *a, const void *b) {
+    return (*(int*)a - *(int*)b);  // crescente
 }
 
-int decrescente(const void *a, const void *b) {
-    return (*(int*)b - *(int*)a);  
+int cmp_impar(const void *a, const void *b) {
+    return (*(int*)b - *(int*)a);  // decrescente
 }
 
 int main() {
@@ -15,24 +15,30 @@ int main() {
 
     int *pares = malloc(N * sizeof(int));
     int *impares = malloc(N * sizeof(int));
-    int contpares = 0, contimpares = 0;
+    int qtd_pares = 0, qtd_impares = 0;
 
     for(int i = 0; i < N; i++) {
         int x;
         scanf("%d", &x);
 
         if (x%2 == 0)
-            pares[contpares++] = x;
+            pares[qtd_pares++] = x;
         else
-            impares[contimpares++] = x;
+            impares[qtd_impares++] = x;
     }
 
-    qsort(pares, contpares, sizeof(int), crescente);
-    qsort(impares, contimpares, sizeof(int), decrescente);
+    // ordena pares crescente
+    qsort(pares, qtd_pares, sizeof(int), cmp_par);
 
-    for (int i = 0; i < contpares; i++)
+    // ordena ímpares decrescente
+    qsort(impares, qtd_impares, sizeof(int), cmp_impar);
+
+    // imprime pares
+    for (int i = 0; i < qtd_pares; i++)
         printf("%d\n", pares[i]);
-    for (int i = 0; i < contimpares; i++)
+
+    // imprime ímpares
+    for (int i = 0; i < qtd_impares; i++)
         printf("%d\n", impares[i]);
 
     free(pares);
