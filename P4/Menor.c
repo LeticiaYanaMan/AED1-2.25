@@ -19,3 +19,6 @@ int valor;
     }
     if (strcmp(c, "PRINT")==0) {
       PRINT(raiz);
+    if (strcmp(c, "MENORES")==0) {
+      scanf("%d", &valor);
+      Menores(raiz, valor);}
